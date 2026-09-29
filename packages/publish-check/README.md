@@ -1,5 +1,7 @@
 # Publish Check
 
+> Built by [EmDash plugins](https://emdashplugins.nl), free and MIT licensed. Need a custom plugin or a WordPress to EmDash migration? See [emdashplugins.nl](https://emdashplugins.nl).
+
 The publish gate for SEO basics. Editors click **Publish**; Publish Check inspects the
 entry and rejects publication with a short, plain reason when basic SEO is broken —
 instead of letting a broken page go live.
