@@ -13,3 +13,4 @@ video/*/snapshots/
 video/*/assets/bed-*.mp3
 video/*/.hyperframes/
 video/*/node_modules/
+scripts/*.log
