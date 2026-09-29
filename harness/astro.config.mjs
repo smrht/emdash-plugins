@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
-import publiceercheck from "publiceercheck";
+import publishCheck from "publish-check";
 
 export default defineConfig({
 	output: "server",
@@ -26,7 +26,7 @@ export default defineConfig({
 				baseUrl: "/_emdash/api/media/file",
 			}),
 			sandboxRunner: "@emdash-cms/sandbox-workerd/sandbox",
-			sandboxed: [publiceercheck],
+			sandboxed: [publishCheck],
 		}),
 	],
 	fonts: [

@@ -1,0 +1,162 @@
+{
+  "content": {
+    "id": "01M3NSSKVP9JFXHB3X51YAFZJ7",
+    "type": "posts",
+    "slug": "publish-check-capture",
+    "status": "draft",
+    "data": {
+      "title": "This draft has a way too long title that will be rejected by the publish gate now",
+      "featured_image": {
+        "id": "01M3NDE6KV7VP0BYQPAAGADFB6",
+        "provider": "local",
+        "width": 1200,
+        "height": 800,
+        "filename": "designing-with-constraints.jpg",
+        "mimeType": "image/jpeg",
+        "alt": "Pencils and design tools on a desk",
+        "meta": {
+          "storageKey": "01M3NDE6KR46HH6C3SHVWRRQH4.jpg",
+          "caption": null,
+          "blurhash": null,
+          "dominantColor": null
+        }
+      },
+      "content": [
+        {
+          "_type": "block",
+          "_key": "c0",
+          "style": "h1",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "s0",
+              "text": "A forbidden H1 heading"
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "c1",
+          "style": "h3",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "s1",
+              "text": "A jumpy H3 before any H2"
+            }
+          ]
+        },
+        {
+          "_type": "image",
+          "_key": "c2",
+          "asset": {
+            "_ref": "01M3NDE6Q0804691DB5H336C6N"
+          }
+        },
+        {
+          "_type": "gallery",
+          "_key": "c3",
+          "images": [
+            {
+              "_type": "image",
+              "_key": "g0",
+              "asset": {
+                "_ref": "01M3NDE6MYMDA75N3FQ3NBVAE8"
+              }
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "c4",
+          "style": "normal",
+          "markDefs": [
+            {
+              "_type": "link",
+              "_key": "l0",
+              "href": "/posts/building-for-the-long-term"
+            },
+            {
+              "_type": "link",
+              "_key": "l1",
+              "href": "https://example.org/external"
+            },
+            {
+              "_type": "link",
+              "_key": "l2",
+              "href": "http://insecure.example.net/page"
+            },
+            {
+              "_type": "link",
+              "_key": "l3"
+            }
+          ],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "s2",
+              "text": "internal link",
+              "marks": [
+                "l0"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "s3",
+              "text": "external link",
+              "marks": [
+                "l1"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "s4",
+              "text": "insecure link",
+              "marks": [
+                "l2"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "s5",
+              "text": "",
+              "marks": [
+                "l3"
+              ]
+            }
+          ]
+        }
+      ],
+      "excerpt": "A capture draft that exercises every field the Publish Check plugin reads before letting an entry go live."
+    },
+    "authorId": "01M3NDE6SS2A1EJMZRZ9G1J7J5",
+    "primaryBylineId": null,
+    "createdAt": "2026-09-29T05:21:57.622Z",
+    "updatedAt": "2026-09-29T05:21:57.622Z",
+    "publishedAt": null,
+    "scheduledAt": null,
+    "liveRevisionId": null,
+    "draftRevisionId": null,
+    "version": 2,
+    "locale": "en",
+    "translationGroup": "01M3NSSKVP9JFXHB3X51YAFZJ7",
+    "seo": {
+      "title": "SEO title override for the capture draft post",
+      "description": "SEO panel description that is long enough to pass the meta description check without any problem.",
+      "image": null,
+      "canonical": null,
+      "noIndex": false
+    },
+    "bylines": [],
+    "byline": null
+  },
+  "collection": "posts",
+  "origin": {
+    "source": "api"
+  },
+  "actor": {
+    "id": "01M3NDE6SS2A1EJMZRZ9G1J7J5",
+    "role": 50,
+    "source": "api"
+  }
+}

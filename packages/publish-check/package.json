@@ -1,6 +1,6 @@
 {
-	"name": "publiceercheck",
-	"version": "0.1.0",
+	"name": "publish-check",
+	"version": "0.2.0",
 	"private": true,
 	"type": "module",
 	"packageManager": "pnpm@12.6.0",
@@ -31,10 +31,14 @@
 		"emdash": "1.0.1"
 	},
 	"devDependencies": {
+		"@emdash-cms/blocks": "1.0.1",
 		"@emdash-cms/plugin-cli": "0.13.0",
 		"@emdash-cms/plugin-test": "0.2.6",
 		"emdash": "1.0.1",
 		"typescript": "^5.9.0",
 		"vitest": "^4.1.0"
+	},
+	"dependencies": {
+		"zod": "3.25.76"
 	}
 }

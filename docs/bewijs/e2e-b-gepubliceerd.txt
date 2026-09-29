@@ -1,0 +1,17 @@
+$ corepack pnpm exec emdash content publish posts publish-check-clean --url http://localhost:4330
+{
+  "success": true
+}
+✔ Published posts/publish-check-clean
+
+$ curl -s http://localhost:4330/posts/publish-check-clean
+HTTP 200
+<title>Publish Check waves a clean post through | My Blog</title>
+
+== status van de gerepareerde post ==
+{
+  "id": "01M3NTDB6MK3HJR5QDFADNSSZP",
+  "slug": "publish-check-clean",
+  "status": "published",
+  "publishedAt": "2026-09-29T05:34:40.930Z"
+}

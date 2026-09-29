@@ -1,0 +1,20 @@
+== mode=warn gezet via POST /_emdash/api/plugins/publish-check/admin (form_submit save)
+
+$ corepack pnpm exec emdash content publish posts publish-check-capture --url http://localhost:4330
+{
+  "success": true
+}
+✔ Published posts/publish-check-capture
+
+WARN-PUBLISHED: capture draft published in warn mode (no PUBLISH_REJECTED)
+
+== rapporten na de warn-publish (page_load /reports, tabelrijen) ==
+
+STATS: [{"label": "Total checks", "value": "7"}, {"label": "Mode", "value": "block"}, {"label": "Language", "value": "en"}]
+2026-09-29T05:41:52.186Z | This demo draft fails the publish check on purpose | publish | ⛔ Rejected | title is 80 chars incl. suffix (max 60) · meta description is 9 chars 
+2026-09-29T05:34:57.574Z | This draft has a way too long title that will be r | publish | ⚠ Errors (warn mode) | title is 62 chars incl. suffix (max 60) · meta description is 97 chars
+2026-09-29T05:34:40.915Z | Publish Check waves a clean post through · publish | publish | ✓ Passed | 
+2026-09-29T05:32:44.194Z | Publish Check waves a clean post through · publish | publish | ⛔ Rejected | meta description is 116 chars (min 120)
+2026-09-29T05:32:23.269Z | This draft has a way too long title that will be r | publish | ⛔ Rejected | title is 62 chars incl. suffix (max 60) · meta description is 97 chars
+2026-09-29T05:32:23.108Z | This draft has a way too long title that will be r | publish | ⛔ Rejected | title is 62 chars incl. suffix (max 60) · meta description is 97 chars
+2026-09-29T05:24:55.815Z | This draft has a way too long title that will be r | publish | ⛔ Rejected | title is 81 chars incl. suffix (max 60) · meta description is 106 char

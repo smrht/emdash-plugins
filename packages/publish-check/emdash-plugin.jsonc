@@ -1,0 +1,52 @@
+{
+	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+
+	"slug": "publish-check",
+	"publisher": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+
+	"license": "MIT",
+	"author": { "name": "emdashplugins.nl", "url": "https://emdashplugins.nl" },
+	"security": { "email": "security@emdashplugins.nl" },
+	"repo": "https://github.com/smrht/emdash-plugins",
+
+	"name": "Publish Check",
+	"description": "The publish gate for SEO basics: blocks publishing when titles, meta descriptions, headings, alt text, or links are broken.",
+	"keywords": ["seo", "publishing", "content-policy", "accessibility", "editorial"],
+
+	// Trust contract — what runtime APIs the plugin asks for.
+	// hooks.content-policy:register is the only capability: it allows the
+	// content:beforePublish and content:beforeSchedule hooks to reject a
+	// publication with a reason. It grants NO content reads/writes and no
+	// publish actions. ctx.settings and ctx.storage are plugin-namespaced by
+	// the host and need no capability; the storage collections below are part
+	// of this contract (one report row per check run).
+	"capabilities": ["hooks.content-policy:register"],
+	"allowedHosts": [],
+	"storage": {
+		"reports": { "indexes": ["checkedAt"] }
+	},
+
+	"admin": {
+		"pages": [
+			{ "path": "/reports", "label": "Publish Check", "icon": "shield" },
+			{ "path": "/settings", "label": "Settings", "icon": "settings" }
+		],
+		"settingsSchema": {
+			"mode": { "type": "string", "label": "Mode (block|warn)", "default": "block" },
+			"language": { "type": "string", "label": "Report language (en|nl)", "default": "en" },
+			"maxTitle": { "type": "number", "label": "Max title length incl. suffix", "default": 60 },
+			"titleSuffix": { "type": "string", "label": "Title suffix added by the site", "default": "" },
+			"minDesc": { "type": "number", "label": "Min meta description length", "default": 120 },
+			"maxDesc": { "type": "number", "label": "Max meta description length", "default": 155 },
+			"minInternalLinks": { "type": "number", "label": "Min internal links", "default": 1 },
+			"siteUrl": { "type": "string", "label": "Site URL (for internal-link detection)", "default": "" },
+			"checkTitle": { "type": "boolean", "label": "Check title", "default": true },
+			"checkDescription": { "type": "boolean", "label": "Check meta description", "default": true },
+			"checkH1": { "type": "boolean", "label": "Check for H1 blocks", "default": true },
+			"checkAlt": { "type": "boolean", "label": "Check image alt text", "default": true },
+			"checkHeadingOrder": { "type": "boolean", "label": "Check heading order", "default": true },
+			"checkInternalLinks": { "type": "boolean", "label": "Check internal links", "default": true },
+			"checkLinkQuality": { "type": "boolean", "label": "Check link quality", "default": true }
+		}
+	}
+}

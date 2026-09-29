@@ -1,0 +1,8 @@
+$ corepack pnpm exec emdash content publish posts publish-check-capture --url http://localhost:4330
+
+ ERROR  Publish Check: title is 62 chars incl. suffix (max 60) · meta description is 97 chars (min 120) · 1 H1 block in the body (the title is the H1) · 2 images without alt text
+
+
+$ curl -X POST -b <admin-sessiecookie> -H "X-EmDash-Request: 1" \
+    http://localhost:4330/_emdash/api/content/posts/publish-check-capture/publish
+{"success":false,"error":{"code":"PUBLISH_REJECTED","message":"Publish Check: title is 62 chars incl. suffix (max 60) · meta description is 97 chars (min 120) · 1 H1 block in the body (the title is the H1) · 2 images without alt text"}}

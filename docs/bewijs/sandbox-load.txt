@@ -1,0 +1,2 @@
+== astro dev logs (grep sandboxed plugin) ==
+EmDash: Loaded sandboxed plugin publish-check:0.2.0 with capabilities: [hooks.content-policy:register]
