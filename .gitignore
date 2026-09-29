@@ -8,3 +8,8 @@ dist/
 data/
 .env*
 *.tgz
+video/*/capture/0*/
+video/*/snapshots/
+video/*/assets/bed-*.mp3
+video/*/.hyperframes/
+video/*/node_modules/

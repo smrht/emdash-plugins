@@ -1,0 +1,11 @@
+{
+  "name": "publish-check",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.87 preview",
+    "check": "npx --yes hyperframes@0.8.87 check",
+    "render": "npx --yes hyperframes@0.8.87 render",
+    "publish": "npx --yes hyperframes@0.8.87 publish"
+  }
+}

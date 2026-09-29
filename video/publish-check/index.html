@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-400.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-700.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); font-weight: 400; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0b0b0c; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; background: #0b0b0c; font-family: "Inter", sans-serif; color: #f4f4f5; }
+      .scene { position: absolute; inset: 0; }
+      .kicker { font-family: "JetBrains Mono", monospace; font-size: 26px; letter-spacing: 0.06em; color: #f97316; text-transform: uppercase; }
+      /* S1 */
+      #s1 { display: flex; flex-direction: column; justify-content: center; padding: 0 180px; gap: 40px; }
+      #s1-title { font-size: 70px; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; max-width: 1560px; }
+      #s1-cut { position: relative; display: inline-block; color: #f97316; }
+      #s1-line { position: absolute; left: 0; right: 0; bottom: -10px; height: 8px; background: #f97316; border-radius: 4px; transform-origin: left center; }
+      #s1-note { font-size: 34px; color: #a1a1aa; }
+      /* browserframe voor echte opnames */
+      .frame { position: absolute; left: 240px; top: 110px; width: 1440px; height: 900px; border-radius: 18px; overflow: hidden; }
+      .zoom { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .zoom video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .caption { position: absolute; left: 240px; top: 30px; font-size: 40px; font-weight: 700; letter-spacing: -0.01em; }
+      .caption span { color: #f97316; }
+      .tag { position: absolute; left: 240px; bottom: 26px; font-family: "JetBrains Mono", monospace; font-size: 20px; color: #8e8e98; }
+      /* S4 */
+      #s4-big { position: absolute; left: 240px; right: 240px; bottom: 120px; font-size: 76px; font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
+      #s4-big div { overflow: hidden; }
+      #s4-big span { display: block; }
+      #s4-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,0) 30%, rgba(11,11,12,0.94) 72%); }
+      /* S5 */
+      #s5 { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
+      #s5-icon { width: 180px; height: 180px; }
+      #s5-name { font-size: 96px; font-weight: 700; letter-spacing: -0.03em; }
+      #s5-sub { font-size: 38px; color: #d4d4d8; }
+      #s5-meta { font-family: "JetBrains Mono", monospace; font-size: 26px; color: #a1a1aa; }
+      #s5-url { font-size: 34px; font-weight: 700; color: #f97316; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28" data-width="1920" data-height="1080">
+      <!-- S1: freeze op de afgekapte titel -->
+      <section id="s1" class="scene clip" data-start="0" data-duration="4.6" data-track-index="0">
+        <div id="s1-kicker" class="kicker">Zo stond deze titel live</div>
+        <div id="s1-title">Kadence versus Blocksy versus Astra: welk thema blijft snel bij een groeiende <span id="s1-cut">we<span id="s1-line"></span></span></div>
+        <div id="s1-note">Afgekapt, midden in een woord. En zo ging hij online.</div>
+      </section>
+
+      <!-- S2: weigering in de EmDash-admin (echte opname) -->
+      <section id="s2" class="scene clip" data-start="4.6" data-duration="6.6" data-track-index="1">
+        <div class="caption" id="s2-cap">Publiceren? <span>Publish Check</span> zegt nee.</div>
+        
+        <div class="tag">EmDash 1.0.1 · lokale testsite · echte opname</div>
+      </section>
+      <div class="frame"><div class="zoom" data-layout-allow-overflow id="z1" style="transform-origin:1400px 890px;"><video id="v1" class="clip" src="assets/clips/01-weigering.mp4" data-start="4.6" data-duration="6.6" data-media-start="0.9" data-track-index="2" muted playsinline></video></div></div>
+
+      <!-- S3: gerepareerd en live -->
+      <section id="s3" class="scene clip" data-start="11.2" data-duration="5.8" data-track-index="1">
+        <div class="caption" id="s3-cap">Titel ingekort. Meta ingevuld. Link erbij. <span>Live.</span></div>
+        <div class="tag">EmDash 1.0.1 · lokale testsite · echte opname</div>
+      </section>
+      <div class="frame"><div class="zoom" data-layout-allow-overflow id="z2" style="transform-origin:1260px 200px;"><video id="v2" class="clip" src="assets/clips/02-gepubliceerd.mp4" data-start="11.2" data-duration="5.8" data-media-start="0.9" data-track-index="2" muted playsinline></video></div></div>
+
+      <!-- S4: rechtenkaart -->
+      <div class="frame"><div class="zoom" data-layout-allow-overflow id="z4" style="transform-origin:520px 250px;"><video id="v4" class="clip" src="assets/clips/04-rechten.mp4" data-start="17" data-duration="5.6" data-media-start="0" data-track-index="2" muted playsinline></video></div></div>
+      <section id="s4" class="scene clip" data-start="17" data-duration="5.6" data-track-index="3">
+        <div id="s4-shade"></div>
+        <div id="s4-big" data-layout-allow-overflow>
+          <div><span id="s4-l1">1 recht: publiceren tegenhouden.</span></div>
+          <div><span id="s4-l2" style="color:#f97316">Geen netwerk. Geen database.</span></div>
+        </div>
+      </section>
+
+      <!-- S5: eindkaart -->
+      <section id="s5" class="scene clip" data-start="22.6" data-duration="5.4" data-track-index="0">
+        <img id="s5-icon" src="assets/icon.png" alt="" />
+        <div id="s5-name">Publish Check</div>
+        <div id="s5-sub">Gratis SEO-controle bij elke publicatie in EmDash CMS</div>
+        <div id="s5-meta">MIT · github.com/smrht/emdash-plugins</div>
+        <div id="s5-url">emdashplugins.nl</div>
+      </section>
+
+      <audio id="bed" src="assets/bed.mp3" data-start="0" data-duration="28" data-track-index="10" data-volume="0.9"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // S1: freeze-frame op de titel, onderstreping trekt de aandacht naar de knip
+      tl.fromTo("#s1-kicker", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.fromTo("#s1-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.25);
+      tl.fromTo("#s1-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.4);
+      tl.fromTo("#s1-note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 2.0);
+      tl.to("#s1-title", { scale: 1.04, duration: 1.8, ease: "none", transformOrigin: "85% 70%" }, 2.6);
+      // S2: smash cut naar de admin; push-in op de melding rechtsonder zodra die verschijnt
+      tl.fromTo("#s2-cap", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 4.7);
+      tl.fromTo("#z1", { scale: 1 }, { scale: 2.25, duration: 1.1, ease: "power3.inOut" }, 7.9);
+      // S3: gerepareerde post gaat live; push-in op "Live version"
+      tl.fromTo("#s3-cap", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 11.3);
+      tl.fromTo("#z2", { scale: 1 }, { scale: 2.0, duration: 1.1, ease: "power3.inOut" }, 13.9);
+      // S4: cut-in op het ene recht, dan de claim
+      tl.fromTo("#z4", { scale: 1 }, { scale: 1.9, duration: 1.4, ease: "power2.inOut" }, 17.2);
+      tl.fromTo("#s4-shade", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 18.6);
+      tl.fromTo("#s4-l1", { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, 18.8);
+      tl.fromTo("#s4-l2", { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, 19.3);
+      // S5: eindkaart
+      tl.fromTo("#s5-icon", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 22.7);
+      tl.fromTo("#s5-name", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 22.95);
+      tl.fromTo("#s5-sub", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 23.3);
+      tl.fromTo("#s5-meta", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 23.6);
+      tl.fromTo("#s5-url", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 23.9);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
