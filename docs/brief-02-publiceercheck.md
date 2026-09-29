@@ -3,7 +3,7 @@
 Werkmap /home/agent/emdash-plugins, pakket packages/publiceercheck (hernoem map/slug naar `publish-check` als dat nog niet zo is).
 Bouwt voort op de harness uit opdracht 1 (lees docs/verslag-01-harness.md voor start/inlog). Denk grondig na.
 Harde regels: zelfde als brief-01 (agentbox-run-heavy zonder `--`, niets in /tmp, eigen PID's stoppen, niet pushen).
-Uitgever wordt `emdashplugins.bsky.social`; zolang de DID onbekend is blijft `publisher` een placeholder, markeer dat in README.
+Uitgever: `emdashplugins.bsky.social` = `did:plc:p5t4ri3u4rr24wglznjsb5uv` (publisher in elk manifest).
 
 ## Productidee
 "The publish gate for SEO basics." Editors klikken Publish; de plugin controleert het concept en weigert publicatie

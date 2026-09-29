@@ -19,7 +19,7 @@ Commit in deze repo met duidelijke berichten. NIET pushen (de hoofdsessie pusht 
    /_emdash/admin inlogt op deze lokale dev-site zonder mens** (setup-wizard, magic link in de console/log, dev-bypass,
    of een API-token via de CLI). Dit is cruciaal: we moeten later in een headless browser door de admin kunnen klikken.
 3. `packages/publiceercheck/`: scaffold met `pnpm dlx @emdash-cms/plugin-cli init publiceercheck` (niet-interactief waar
-   mogelijk; publisher tijdelijk `did:plc:placeholder` als hij iets moet hebben, dit vervangen we later), licentie MIT,
+   mogelijk; publisher tijdelijk `did:plc:p5t4ri3u4rr24wglznjsb5uv` als hij iets moet hebben, dit vervangen we later), licentie MIT,
    author "emdashplugins.nl" url https://emdashplugins.nl, security email security@emdashplugins.nl,
    repo https://github.com/smrht/emdash-plugins.
    Laat de plugin voorlopig alleen een `content:beforePublish`-hook hebben met capability `hooks.content-policy:register`
