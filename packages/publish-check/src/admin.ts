@@ -63,7 +63,7 @@ export async function renderReports(ctx: PluginContext): Promise<BlockResponse> 
 					(data.slug ? ` · ${data.slug}` : ""),
 				action: data.action,
 				result: data.rejected
-					? "⛔ Rejected"
+					? "✕ Rejected"
 					: data.errors.length > 0
 						? "⚠ Errors (warn mode)"
 						: data.warnings.length > 0
