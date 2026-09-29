@@ -20,6 +20,17 @@
 	// publish actions. ctx.settings and ctx.storage are plugin-namespaced by
 	// the host and need no capability; the storage collections below are part
 	// of this contract (one report row per check run).
+	"release": {
+		"requires": { "env:emdash": ">=1.0.1" },
+		"artifacts": {
+			"icon": { "file": "./images/icon.png" },
+			"screenshots": [
+				{ "file": "./images/editor-rejected.png", "lang": "en" },
+				{ "file": "./images/reports.png", "lang": "en" }
+			]
+		}
+	},
+
 	"capabilities": ["hooks.content-policy:register"],
 	"allowedHosts": [],
 	"storage": {
