@@ -1,0 +1,42 @@
+My Blog
+Dashboard
+Content
+Pages
+Posts
+Media
+Manage
+Comments
+Menus
+Redirects
+Widgets
+Sections
+Categories
+Tags
+Bylines
+Admin
+Content Types
+Byline Schema
+Users
+Plugins
+Registry
+Import
+Settings
+
+EmDash v1.0.1 (0e8977c22)
+
+View Site
+Switch to dark
+D
+Dev Admin
+Plugins
+
+Manage installed plugins. Enable or disable plugins to control their functionality.
+
+Registry
+1 plugins
+publiceercheck
+v0.1.0
+1 permission
+Collapse details
+CAPABILITIES
+Review and block publishing, scheduling, and unpublishing content

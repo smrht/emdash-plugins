@@ -1,0 +1,17 @@
+$ emdash content create posts --url http://localhost:4330 --data {\"title\": \"Publicatiecheck werkt\", ...} --slug publicatiecheck-werkt  (create auto-publiceert)
+{ "id": "01M3NDXF4BWMH6CFXDVJGD9W06", "slug": "publicatiecheck-werkt", "status": "published" }
+
+$ curl -b <admin-sessiecookie> http://localhost:4330/_emdash/api/content/posts/01M3NDXF4BWMH6CFXDVJGD9W06
+{
+  "id": "01M3NDXF4BWMH6CFXDVJGD9W06",
+  "slug": "publicatiecheck-werkt",
+  "status": "published",
+  "data": {
+    "title": "Publicatiecheck werkt",
+    "excerpt": "Eerste post door de publiceercheck-plugin."
+  },
+  "publishedAt": "2026-09-29T01:54:20.976Z"
+}
+
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:4330/posts/publicatiecheck-werkt
+200

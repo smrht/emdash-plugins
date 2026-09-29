@@ -1,0 +1,19 @@
+{
+	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+
+	"slug": "publiceercheck",
+	"publisher": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+
+	"license": "MIT",
+	"author": { "name": "emdashplugins.nl", "url": "https://emdashplugins.nl" },
+	"security": { "email": "security@emdashplugins.nl" },
+	"repo": "https://github.com/smrht/emdash-plugins",
+
+	// Trust contract — what runtime APIs the plugin asks for.
+	// hooks.content-policy:register is nodig voor de content:beforePublish-hook
+	// (publicatieweigering). Changing these between releases requires a version
+	// bump because installed users have consented to the old contract.
+	"capabilities": ["hooks.content-policy:register"],
+	"allowedHosts": [],
+	"storage": {}
+}

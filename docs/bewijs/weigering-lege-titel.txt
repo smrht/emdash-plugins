@@ -1,0 +1,13 @@
+$ emdash content publish posts 01M3NDVF8DN62Q80JPBKP78Y7A --url http://localhost:4330
+
+ ERROR  Titel ontbreekt: vul een titel in voordat je publiceert.
+
+
+$ curl -X POST -b <admin-sessiecookie> -H "X-EmDash-Request: 1" http://localhost:4330/_emdash/api/content/posts/01M3NDVF8DN62Q80JPBKP78Y7A/publish
+{
+    "success": false,
+    "error": {
+        "code": "PUBLISH_REJECTED",
+        "message": "Titel ontbreekt: vul een titel in voordat je publiceert."
+    }
+}
