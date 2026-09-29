@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.emdash/
+.wrangler/
+*.db
+*.db-*
+*.sqlite
+data/
+.env*
+*.tgz
