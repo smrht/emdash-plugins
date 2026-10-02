@@ -1,0 +1,45 @@
+{
+  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/publish-check",
+  "cid": "bafyreihe2zbg2lxktq5zgw5hvivjy7uwwfi3fjqtzq4a7sobequwkqoq7a",
+  "value": {
+    "id": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/publish-check",
+    "name": "Publish Check",
+    "slug": "publish-check",
+    "type": "emdash-plugin",
+    "$type": "com.emdashcms.experimental.package.profile",
+    "authors": [
+      {
+        "url": "https://emdashplugins.nl",
+        "name": "emdashplugins.nl"
+      }
+    ],
+    "license": "MIT",
+    "keywords": [
+      "seo",
+      "publishing",
+      "content-policy",
+      "accessibility",
+      "editorial"
+    ],
+    "sections": {
+      "description": "Publish Check is the publish gate for SEO basics. When an editor clicks Publish, it checks the draft and rejects publication with a short reason when the title is too long, the meta description is missing or off-length, the body contains an H1, an image has no alt text, or internal links are missing. Checks both Publish and Schedule. Version 0.3.0 also inspects static HTML blocks and EmDash 1.1 iframe blocks. Isolated blocks do not count as host-page headings or internal links. HTTPS embed URLs are required; missing titles are warnings. No JavaScript execution or remote URL requests. This is not a security or ranking guarantee. Block mode or warn mode, reports in the admin.\n\nIt asks for one permission: hooks.content-policy:register. No network, no content read or write.\n\nBuilt and maintained by [EmDash plugins](https://emdashplugins.nl). Source: [github.com/smrht/emdash-plugins](https://github.com/smrht/emdash-plugins)."
+    },
+    "security": [
+      {
+        "email": "security@emdashplugins.nl"
+      }
+    ],
+    "extensions": {
+      "com.emdashcms.experimental.package.profileExtension": {
+        "$type": "com.emdashcms.experimental.package.profileExtension",
+        "repository": "https://github.com/smrht/emdash-plugins",
+        "releasePolicy": {
+          "$type": "com.emdashcms.experimental.package.profileExtension#releasePolicy",
+          "requireProvenance": false
+        }
+      }
+    },
+    "description": "Checks before publishing or scheduling: titles, descriptions, headings, alt text, links, HTML blocks and HTTPS embeds.",
+    "lastUpdated": "2026-10-02T16:50:35.268Z"
+  }
+}
