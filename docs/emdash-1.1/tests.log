@@ -1,0 +1,87 @@
+Build waiting for memory budget / two-build capacity.
+$ emdash-plugin validate && vitest run
+✔ Manifest is valid: /home/agent/emdash-plugins/packages/publish-check/emdash-plugin.jsonc
+ℹ Default release hosting: publisher PDS blobs
+
+ RUN  v4.1.11 /home/agent/emdash-plugins/packages/publish-check
+
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-8pdqJ1/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 177ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-8pdqJ1/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+[33m[PLUGIN_TIMINGS] Warning:[0m Your build spent significant time in plugin `rolldown-plugin-dts:generate`. See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✔ Build complete in 3383ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-8pdqJ1/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 30ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-OLQlVD/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 82ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-OLQlVD/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 20ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-OLQlVD/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 31ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-YyJ4hv/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 55ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-YyJ4hv/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 16ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-YyJ4hv/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 29ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-XUyuNd/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 54ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-XUyuNd/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 12ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../../../tmp/emdash-build-XUyuNd/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 28ms
+
+ Test Files  4 passed (4)
+      Tests  61 passed (61)
+   Start at  18:28:01
+   Duration  53.58s (transform 9.83s, setup 0ms, import 26.09s, tests 20.44s, environment 1ms)
+

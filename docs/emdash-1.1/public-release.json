@@ -1,0 +1,83 @@
+{
+  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/publish-check:0.3.0",
+  "cid": "bafyreicpqwjza2wvv2ocmmbrvcja63samif4csc6727dcb5zo4e2kgeh54",
+  "value": {
+    "repo": "https://github.com/smrht/emdash-plugins",
+    "$type": "com.emdashcms.experimental.package.release",
+    "package": "publish-check",
+    "version": "0.3.0",
+    "requires": {
+      "env:emdash": ">=1.0.1"
+    },
+    "artifacts": {
+      "icon": {
+        "blob": {
+          "ref": {
+            "$link": "bafkreih3k26xhhhdt2om4xd37pm6ww4ns7cbcekknsmoe3xag44us2b7mi"
+          },
+          "size": 9049,
+          "$type": "blob",
+          "mimeType": "image/png"
+        },
+        "width": 256,
+        "height": 256,
+        "checksum": "bciqpwvv5oooohhu4zzohx66z5nny3f6eceiuu3ey4jxoanzzjfud6yq",
+        "contentType": "image/png"
+      },
+      "package": {
+        "blob": {
+          "ref": {
+            "$link": "bafkreigu7omaodh7cfy6et53avoicpaxzpiay3cgdis5r7abtizbpw3egq"
+          },
+          "size": 50175,
+          "$type": "blob",
+          "mimeType": "application/gzip"
+        },
+        "checksum": "bciqnj64ya4gp6elr4jh3wbk4qe6bps6qbrwemgrf3d6adgrsc7nwina",
+        "contentType": "application/gzip"
+      },
+      "screenshots": [
+        {
+          "blob": {
+            "ref": {
+              "$link": "bafkreiebxkd5vajgttrijyjbxemjjsm34iukedplm4utrqpilk3uobkuhy"
+            },
+            "size": 147610,
+            "$type": "blob",
+            "mimeType": "image/png"
+          },
+          "lang": "en",
+          "width": 1680,
+          "height": 950,
+          "checksum": "bciqidouh3kasnhhcqtqsdoiystezxyriuig6wzzjhda6qwvxi4cvipq",
+          "contentType": "image/png"
+        },
+        {
+          "blob": {
+            "ref": {
+              "$link": "bafkreighaxtq6q2oszpisytbgz6xq3sdz3ee6ums2yewbzljqf5kvhzdui"
+            },
+            "size": 160231,
+            "$type": "blob",
+            "mimeType": "image/png"
+          },
+          "lang": "en",
+          "width": 1680,
+          "height": 950,
+          "checksum": "bciqmobphb5bu5fs6rfrgcnt5pbxehtwij5izfvqjmdswtal2vkpshiq",
+          "contentType": "image/png"
+        }
+      ]
+    },
+    "extensions": {
+      "com.emdashcms.experimental.package.releaseExtension": {
+        "$type": "com.emdashcms.experimental.package.releaseExtension",
+        "declaredAccess": {
+          "content": {
+            "policy": {}
+          }
+        }
+      }
+    }
+  }
+}

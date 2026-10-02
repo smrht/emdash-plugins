@@ -195,6 +195,7 @@ export async function renderSettingsForm(
 					label: "Require internal links",
 					initial_value: settings.checkInternalLinks,
 				},
+				{ type: "toggle", action_id: "checkEmbeds", label: "Check HTTPS embeds and descriptive titles", initial_value: settings.checkEmbeds },
 				{
 					type: "toggle",
 					action_id: "checkLinkQuality",

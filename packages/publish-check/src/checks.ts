@@ -1,3 +1,4 @@
+import { inspectHtml, MAX_HTML_CHARS } from "./html";
 import type {
 	CheckFinding,
 	ContentData,
@@ -32,7 +33,7 @@ export function siteHostFromUrl(siteUrl: string): string | undefined {
 /** Internal = relative href on the site, or absolute on the site's host. */
 export function isInternalHref(href: string, siteHost: string | undefined): boolean {
 	const trimmed = href.trim();
-	if (trimmed.startsWith("/")) return true;
+	if (trimmed.startsWith("/") && !trimmed.startsWith("//") && !trimmed.includes("\\")) return true;
 	if (siteHost === undefined) return false;
 	try {
 		const url = new URL(trimmed);
@@ -54,6 +55,25 @@ export function runChecks(
 	const seoTitle = asString(content.seo?.title);
 	const seoDescription = asString(content.seo?.description);
 	const findings: CheckFinding[] = [];
+	const blocks = bodyBlocks(data);
+	if (blocks.length > 1000) return [{id:"inspection-limit",severity:"error",en:"Content exceeds the 1,000-block inspection limit; check incomplete",nl:"Inhoud overschrijdt de controlegrens van 1.000 blokken; controle onvolledig"}];
+	const htmlBlocks = blocks.filter(b => b._type === "htmlBlock");
+	const oversized = htmlBlocks.reduce((sum,b)=>sum+(asString(b.html)?.length ?? 0),0) > MAX_HTML_CHARS;
+	const parsed = new Map(htmlBlocks.map(b=>[b,inspectHtml(oversized ? "" : asString(b.html) ?? "", b.isolated === true)]));
+	const html = [...parsed.values()];
+	const links = [...allLinks(data), ...html.flatMap(h => h.links)];
+	const headings = blocks.flatMap(b => b._type === "htmlBlock" ? parsed.get(b)!.headings : [blockStyle(b)].filter((h): h is string => h !== undefined));
+	if (oversized) findings.push({id: "html-size", severity: "error", en: "Combined HTML exceeds the 32,768-character inspection limit", nl: "HTML overschrijdt samen de controlegrens van 32.768 tekens"});
+	if (settings.checkEmbeds) {
+		const embeds = [...html.flatMap(h => h.embeds), ...blocks.filter(b => b._type === "iframe").map(b => ({src: asString(b.src), title: asString(b.title)}))];
+		for (const embed of embeds) {
+			if ("srcdoc" in embed && embed.srcdoc !== undefined) findings.push({id:"embed-srcdoc",severity:"error",en:"iframe srcdoc overrides its URL; use an isolated HTML block instead",nl:"iframe srcdoc overschrijft de URL; gebruik een geïsoleerd HTML-blok"});
+			let secure = false;
+			try { const u = new URL(embed.src ?? ""); secure = u.protocol === "https:" && !u.username && !u.password; } catch {}
+			if (!secure) findings.push({id: "embed-source", severity: "error", en: "embed needs an absolute HTTPS URL without credentials", nl: "embed heeft een volledige HTTPS-URL zonder inloggegevens nodig"});
+			if (!embed.title?.trim()) findings.push({id: "embed-title", severity: "warning", en: "embed has no descriptive title", nl: "embed mist een beschrijvende titel"});
+		}
+	}
 
 	if (settings.checkTitle) {
 		const title = asString(data.title);
@@ -106,9 +126,7 @@ export function runChecks(
 	}
 
 	if (settings.checkH1) {
-		const h1Count = bodyBlocks(data).filter(
-			(block) => blockStyle(block) === "h1",
-		).length;
+		const h1Count = headings.filter(style => style === "h1").length;
 		if (h1Count > 0) {
 			findings.push({
 				id: "no-h1",
@@ -126,7 +144,7 @@ export function runChecks(
 	}
 
 	if (settings.checkAlt) {
-		const alts = [...bodyImageAlts(data), ...imageFieldAlts(data)];
+		const alts = [...bodyImageAlts(data), ...imageFieldAlts(data), ...html.flatMap(h => h.alts)];
 		const missing = alts.filter((alt) => !alt || alt.trim() === "").length;
 		if (missing > 0) {
 			findings.push({
@@ -140,8 +158,7 @@ export function runChecks(
 
 	if (settings.checkHeadingOrder) {
 		let jumped: string | undefined;
-		for (const block of bodyBlocks(data)) {
-			const style = blockStyle(block);
+		for (const style of headings) {
 			if (style === undefined || !HEADING_STYLES.has(style)) continue;
 			if (style === "h2") break;
 			if (style !== "h1" && jumped === undefined) jumped = style;
@@ -158,9 +175,9 @@ export function runChecks(
 
 	if (settings.checkInternalLinks) {
 		const siteHost = siteHostFromUrl(settings.siteUrl);
-		const internal = allLinks(data).filter(
+		const internal = links.filter(
 			(link) =>
-				link.href !== undefined && isInternalHref(link.href, siteHost),
+				!("isolated" in link && link.isolated) && link.href !== undefined && isInternalHref(link.href, siteHost),
 		).length;
 		if (internal < settings.minInternalLinks) {
 			findings.push({
@@ -173,7 +190,6 @@ export function runChecks(
 	}
 
 	if (settings.checkLinkQuality) {
-		const links = allLinks(data);
 		const withoutHref = links.filter(
 			(link) => link.href === undefined || link.href.trim() === "",
 		).length;

@@ -1,0 +1,58 @@
+Build waiting for memory budget / two-build capacity.
+info: Loaded manifest: /home/agent/emdash-plugins/packages/publish-check/emdash-plugin.jsonc
+info: Publisher: @emdashplugins.bsky.social (did:plc:p5t4ri3u4rr24wglznjsb5uv)
+start: Bundling plugin...
+start: Building plugin...
+info: Manifest: /home/agent/emdash-plugins/packages/publish-check/emdash-plugin.jsonc
+info: Plugin entry: /home/agent/emdash-plugins/packages/publish-check/src/plugin.ts
+info: npm package: publish-check
+start: Building runtime entry...
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-ece991ae06364d5080bc9a0412d53f6c/tmp/emdash-build-wDVoxb/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 174ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-ece991ae06364d5080bc9a0412d53f6c/tmp/emdash-build-wDVoxb/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 2731ms
+success: Built plugin.mjs
+start: Probing plugin surface...
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-ece991ae06364d5080bc9a0412d53f6c/tmp/emdash-build-wDVoxb/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 43ms
+info:   Hooks: content:beforePublish, content:beforeSchedule
+info:   Routes: admin
+success: Wrote manifest.json
+start: Generating descriptor module...
+success: Wrote index.mjs
+success: Plugin built: @emdashplugins.bsky.social/publish-check@0.3.0
+success: Plugin: @emdashplugins.bsky.social/publish-check@0.3.0
+info:   Capabilities: hooks.content-policy:register
+start: Validating bundle...
+start: Collecting assets...
+success: Included README.md
+info: Bundle size: 139.4 KB across 3 files
+success: Validation passed
+start: Creating tarball...
+success: Created publish-check-0.3.0.tar.gz (49.0KB)
+info:   SHA-256: d4fb98070cff1171e24fbb055c813c17cbd00c6c461a25d8fc019a3217db6434
+info:   Path: /home/agent/emdash-plugins/packages/publish-check/dist/publish-check-0.3.0.tar.gz
+info: Tarball: 49.0 KB
+info: Multihash: bciqnj64ya4gp6elr4jh3wbk4qe6bps6qbrwemgrf3d6adgrsc7nwina
+info: Package: @emdashplugins.bsky.social/publish-check@0.3.0
+info: Uploading icon (256x256) to the publisher PDS
+success: Uploaded icon
+info: Uploading screenshot 1 (1680x950) to the publisher PDS
+success: Uploaded screenshot 1
+info: Uploading screenshot 2 (1680x950) to the publisher PDS
+success: Uploaded screenshot 2
+info: Updating package profile for did:plc:p5t4ri3u4rr24wglznjsb5uv/publish-check
+warn: Ignored on subsequent publish (existing package record wins): license, name, description, keywords, authors, security, sections. To edit these on the existing package, run `emdash-plugin update-package` (dry-run prints the diff; pass `--yes` to apply).
+{"identifier":"@emdashplugins.bsky.social/publish-check","profile":"at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/publish-check","release":"at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/publish-check:0.3.0","cid":"bafyreicpqwjza2wvv2ocmmbrvcja63samif4csc6727dcb5zo4e2kgeh54","checksum":"bciqnj64ya4gp6elr4jh3wbk4qe6bps6qbrwemgrf3d6adgrsc7nwina","hosting":"blob","profileCreated":false,"releaseOverwritten":false,"page":"https://plugins.emdashcms.com/plugins/@emdashplugins.bsky.social/publish-check"}

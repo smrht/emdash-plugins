@@ -1,0 +1,12 @@
+{
+  "visitor_task": "Een EmDash-sitebeheerder wil de plugin installeren om vaste fouten bij publiceren en inplannen te blokkeren.",
+  "unique_value": "Vrij beschikbare sandboxplugin: exact één minimale capability, geen netwerk of content read/write. 61 geslaagde tests, inclusief echte EmDash1.1 publicatie- en inplanacties. Open source, met expliciete statische grenzen.",
+  "separate_page_reason": "Update van bestaande pluginlisting/documentatie, versie0.3.0; geen nieuwe SEO-landingspagina.",
+  "inventory": "Bestaande publish-check0.2.0 in public atproto registry. Werkplaats verwijst naar deze bestaande bron. Geen duplicaat van forms ofseo-migrate.",
+  "functional_evidence": {
+    "runtime": "61 tests groen: geldige echte publicatie en inplanning slagen; ontbrekende HTML-alt blokkeert publiceren; HTTP-iframe blokkeert inplannen; warn-mode laat inplannen toe. Zie docs/emdash-1.1/tests.log en packages/publish-check/tests/runtime.test.ts.",
+    "limits": "Not sanitizer, not full accessibility/audit, not JS/CSP/404 test. 1000blocks,32768UTF16units; incomplete check blocks.",
+    "licensing": "vendored htmlparser2(MIT), domhandler/domelementtype/entities(BSD2), complete notices in distributed README."
+  },
+  "repair": "Eerste review vond een verwijzing naar een nog ongepubliceerde werkplaats. Die is verwijderd. Tabellen nu expliciet HTML/embeds/checkEmbeds; geen claim dat de site zelf EmDash1.1 draait."
+}

@@ -1,0 +1,47 @@
+◐ Bundling plugin...
+◐ Building plugin...
+ℹ Manifest: /home/agent/emdash-plugins/packages/publish-check/emdash-plugin.jsonc
+ℹ Plugin entry: /home/agent/emdash-plugins/packages/publish-check/src/plugin.ts
+ℹ npm package: publish-check
+◐ Building runtime entry...
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-a8ecc0be313547feb2c000b8263ea854/tmp/emdash-build-9v9pM8/runtime/plugin.mjs  129.11 kB │ gzip: 44.37 kB
+ℹ 1 files, total: 129.11 kB
+✔ Build complete in 142ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-a8ecc0be313547feb2c000b8263ea854/tmp/emdash-build-9v9pM8/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 2712ms
+✔ Built plugin.mjs
+◐ Probing plugin surface...
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../../../.cache/agent-tmp/builds/agent-build-a8ecc0be313547feb2c000b8263ea854/tmp/emdash-build-9v9pM8/plugin-probe/plugin.mjs  191.41 kB │ gzip: 52.37 kB
+ℹ 1 files, total: 191.41 kB
+✔ Build complete in 48ms
+ℹ   Hooks: content:beforePublish, content:beforeSchedule
+ℹ   Routes: admin
+✔ Wrote manifest.json
+◐ Generating descriptor module...
+✔ Wrote index.mjs
+✔ Plugin built: did:plc:p5t4ri3u4rr24wglznjsb5uv/publish-check@0.3.0
+✔ Plugin: did:plc:p5t4ri3u4rr24wglznjsb5uv/publish-check@0.3.0
+ℹ   Capabilities: hooks.content-policy:register
+◐ Validating bundle...
+◐ Collecting assets...
+✔ Included README.md
+ℹ Bundle size: 139.4 KB across 3 files
+✔ Validation passed
+◐ Creating tarball...
+✔ Created publish-check-0.3.0.tar.gz (49.0KB)
+ℹ   SHA-256: bc3004759480d83d8643a193091453409cfcedd73f9b221af7ef4edd1e285b11
+ℹ   Path: /home/agent/emdash-plugins/packages/publish-check/dist/publish-check-0.3.0.tar.gz
+
+ℹ Publish this plugin from its source directory:
+  emdash-plugin publish
+  Publish rebuilds the bundle and uploads it to your PDS.

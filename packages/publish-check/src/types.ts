@@ -29,6 +29,7 @@ export interface PublishCheckSettings {
 	checkHeadingOrder: boolean;
 	checkInternalLinks: boolean;
 	checkLinkQuality: boolean;
+	checkEmbeds: boolean;
 }
 
 /**

@@ -1,6 +1,6 @@
 {
 	"name": "publish-check",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"private": true,
 	"type": "module",
 	"packageManager": "pnpm@12.6.0",
@@ -25,16 +25,19 @@
 		"bundle": "emdash-plugin bundle",
 		"login": "emdash-plugin login",
 		"publish": "emdash-plugin publish",
-		"release:setup": "emdash-plugin release setup"
+		"release:setup": "emdash-plugin release setup",
+		"vendor:html": "node scripts/vendor-html.mjs"
 	},
 	"peerDependencies": {
-		"emdash": "1.0.1"
+		"emdash": ">=1.0.1 <2"
 	},
 	"devDependencies": {
-		"@emdash-cms/blocks": "1.0.1",
-		"@emdash-cms/plugin-cli": "0.13.0",
-		"@emdash-cms/plugin-test": "0.2.6",
-		"emdash": "1.0.1",
+		"@emdash-cms/blocks": "1.1.0",
+		"@emdash-cms/plugin-cli": "0.13.2",
+		"@emdash-cms/plugin-test": "0.2.7",
+		"emdash": "1.1.0",
+		"esbuild": "0.28.2",
+		"htmlparser2": "10.0.0",
 		"typescript": "^5.9.0",
 		"vitest": "^4.1.0"
 	},

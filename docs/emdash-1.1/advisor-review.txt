@@ -1,0 +1,167 @@
+Skip to content
+Home
+Space
+Scheduled
+Plugins
+Explore
+Share
+You said:
+Technische review, read-only. We bouwen een EmDash CMS 1.1 sandboxplugin Publish Check (Cloudflare isolate). CLI 0.13.2 bundelt alleen emdash/plugin en zod (noExternal hardcoded), zodat gewone dependency parse5 bij de probe in een tempmap niet gevonden wordt. Registry limiteert één runtimebestand 128 KiB. parse5 bundelt 180k + plugin70k, te groot. Voorstel: htmlparser2 parseDocument vooraf vendoren via esbuild (MIT/licenties, pinned versions, reproduceerbare build), statische HTML analyseren zonder uitvoering/netwerk, totale HTML-invoer begrenzen op32768 tekens, iteratieve traversal, script/style/template/comments overslaan, links/alt/headings/iframe src/title checken. isolated:true headings/interne links tellen niet als host-pagina, iframe alleen absolute https zonder URLcredentials. Demo krijgt exactzelfde checkerbron plus verfcalculator export HTML isolated:true. Kritiseer bundle/security/semantiek: welke concrete edgecases en runtimechecks ontbreken? Geen accountdata of secrets. Alleen advies.
+Worked for 5m 42s
+ChatGPT said:
+
+Dit is een verdedigbare route voor een begrensde statische checker. Ik zou htmlparser2 niet afwijzen omdat het geen volledige browserparser is. De belangrijkste ontbrekende waarborgen zitten bij srcdoc, de herkomst van isolated, begrenzing vóór en tijdens het parserwerk, en het onderscheid tussen “geen bevindingen” en “niet volledig gecontroleerd”.
+
+Ik neem jullie CLI-probe, bundlegroottes en registrylimiet als uitgangspunt; de uiteindelijke pluginbundle heb ik niet gezien of uitgevoerd.
+
+1. Bundle: bewijs de zelfstandigheid van het uiteindelijke runtimebestand
+
+Vooraf vendoren is logisch, maar laat de plugin een relatief lokaal ESM-bestand importeren, niet opnieuw een package-naam die de CLI kan externaliseren. Maak de vendor-entry uitsluitend de benodigde parseDocument-export. ESM, bundling en tree-shaking helpen om ongebruikte exports buiten de bundle te houden; controleer dit in het build-metafile in plaats van op de importregel te vertrouwen. 
+esbuild
+
+De doorslaggevende acceptatietest zou ik zo definiëren:
+
+Het definitieve CLI-artifact is maximaal 131.072 bytes, bevat geen onbedoelde externe imports of extra runtimechunks, en importeert én voert een check uit vanuit een schone tempmap zonder project-node_modules, daarna ook in de werkelijke sandboxruntime.
+
+Meet dus na de laatste CLI-transformatie, inclusief wrapper en notices, niet alleen het vendorbestand of de gzipgrootte. Houd sourcemaps buiten het runtimebestand. Controleer ook dat de tweede buildstap de licentievermeldingen niet wegminificeert: esbuilds legalComments verwerkt herkende broncommentaren, maar is geen inventarisatie van alle dependency-licentiebestanden. 
+esbuild
+
+Pin naast htmlparser2 ook transitieve dependencies, esbuild en de CLI via het lockfile. Laat twee schone builds dezelfde artifacthash opleveren. Test de daadwerkelijke export en handleraanroep: alleen succesvol importeren ontdekt geen fout in een pas later gebruikte codebranch. EmDash documenteert voor sandboxplugins Web APIs, niet Node-built-ins; een geslaagde Node-probe alleen bewijst daarom geen runtimecompatibiliteit. 
+GitHub
+
+2. De invoerlimiet helpt echt, maar iteratieve traversal begrenst de parser niet
+
+32.768 tekens is een nuttige harde bovengrens. Leg wel vast of dit JavaScript-stringlengte, Unicode-codepunten of UTF-8-bytes betekent. Controleer de totale som over alle HTML-velden vóór het parsen. Begrens daarnaast het aantal blokken en de input-envelope: honderdduizend lege HTML-blokken passen nog steeds binnen een limiet die uitsluitend HTML-tekens telt.
+
+Niet afkappen en vervolgens groen geven. Een te groot document, ongeldige input of afgebroken analyse moet een afzonderlijk resultaat krijgen, bijvoorbeeld INCOMPLETE of LIMIT_EXCEEDED.
+
+Een concrete belastingsproef onder jullie limiet:
+
+Plain text
+4.000 × "<x>", gevolgd door 4.000 × "</y>"
+
+Dat zijn 28.000 tekens, met diepe nesting en veel niet-passende eindtags. De geraadpleegde parserbron zoekt eindtags in zijn open-elementenstack; dit is precies het soort patroon waarvoor je het werkelijke CPU-gedrag wilt meten. parseDocument bouwt bovendien de DOM volledig voordat jullie traversal begint. Een dieptelimiet die uitsluitend tijdens traversal wordt gecontroleerd, komt dus te laat om parserkosten te voorkomen. 
+GitHub
++1
+
+Controleer ook dat tekstextractie, node-selectie en rapportage niet alsnog recursief zijn. Loop uitsluitend via children, niet generiek door DOM-objecteigenschappen met terugverwijzingen. Begrens bevindingen en bewijsfragmenten; serialiseer nooit de volledige DOM naar het resultaat.
+
+Een Promise.race met een timer onderbreekt geen synchrone parse. Gebruik gemeten worstcases en de host-CPU-grens als bescherming; voeg vroegtijdige parsercallbacks toe wanneer die metingen daar aanleiding toe geven. EmDash waarschuwt zelf dat zijn testhosts de gedeployde CPU- en geheugenlimieten niet reproduceren. 
+MDN Web Docs
++1
+
+3. Parsersemantiek: een kleine, expliciete scope is beter dan schijnbare browsergelijkheid
+
+Leg de parseropties vast, waaronder HTML-modus, entitydecodering en behandeling van self-closing tags. Laat deze niet door de invoer bepalen. Vooral xmlMode: false, decodeEntities: true en recognizeSelfClosing: false zijn relevante uitgangspunten voor gewone HTML. 
+GitHub
+
+Jullie skipbeleid moet betekenen: de betreffende subtree niet meetellen, niet alleen de buitenste node overslaan. Verwijder script/style/comments niet vooraf met regex. Decodeer attributen via de parser, maar parse gedecodeerde tekst niet opnieuw: &lt;h1&gt;Titel&lt;/h1&gt; is tekst, geen heading. 
+HTML Living Standard
+
+Neem minimaal deze semantische fixtures op:
+
+Fixture	Wat de test moet bewaken
+<script/><h1>Nep</h1>	De slash maakt een HTML-script niet zomaar zelfsluitend.
+<textarea><h1>Nep</h1></textarea>	Geen heading uit tekstinhoud tellen.
+<iframe>…HTML-achtige tekst…</iframe>	Geen host-headings of host-links uit iframe-inhoud tellen.
+<!--><h1>Echt</h1>	Afwijkende commentafsluiting mag niet onterecht de rest laten verdwijnen.
+Misneste tabellen, anchors en SVG/MathML	Afwijkingen ten opzichte van browserparsing zichtbaar houden.
+
+Dit zijn relevante versiegevoelige gevallen: htmlparser2 heeft onder andere iframe/raw-text, self-closing scripts, comments en impliciete sluitingen aangepast. De projectdocumentatie verwijst voor strikte HTML-conformiteit nog steeds naar parse5. 
+GitHub
++1
+
+Gebruik parse5 eventueel uitsluitend in development als vergelijking, niet in het runtimeartifact. Vergelijk relevante bevindingen op hetzelfde fixturecorpus. Dat kost geen registryruimte.
+
+Een bijzondere uitzondering op “template overslaan” is declaratieve Shadow DOM, bijvoorbeeld <template shadowrootmode="open">: die kan daadwerkelijk gerenderde inhoud vertegenwoordigen. Ondersteun dit bewust of meld het als buiten scope; “template betekent altijd onzichtbare inhoud” is te sterk. 
+HTML Living Standard
+
+4. Iframes: srcdoc is het sterkste concrete tegenvoorbeeld
+
+Deze invoer kan een keurige HTTPS-src hebben, terwijl iets anders wordt geladen:
+
+XML
+<iframe
+  src="https://embed.example/tool"
+  srcdoc="<h1>Andere inhoud</h1>"
+  title="Verfcalculator">
+</iframe>
+
+srcdoc krijgt voorrang op src. Voor jullie beleid “uitsluitend absolute HTTPS-iframebronnen” zou ik daarom aanwezigheid van srcdoc afwijzen, ook bij srcdoc="". Alleen de waarde op truthiness testen is onvoldoende. 
+HTML Living Standard
+
+Laat de URLcontrole plaatsvinden op de door de HTML-parser gedecodeerde attribuutwaarde. Parse iframe-URL’s zonder base en controleer daarna protocol, hostname en lege username/password. De WHATWG-URL-parser normaliseert sommige afwijkende schrijfwijzen; succesvol new URL(...) betekent dus niet automatisch dat de oorspronkelijke waarde aan jullie strikte schrijfbeleid voldoet. Definieer afzonderlijk wat jullie doen met ontbrekende slashes, backslashes en controltekens. 
+URL Standard
+
+Concrete regressies zijn //embed.example/tool, /tool, https:embed.example, credentials, HTML-entiteiten in het schema en dubbele src-attributen. Controleer bij dubbele attributen dat de checker dezelfde effectieve waarde gebruikt als de parser, niet de laatste match uit een aanvullende regex. De geraadpleegde htmlparser2-bron bewaart de eerste attribuutwaarde. 
+GitHub
+
+HTTPS plus een titel bewijst geen veilige embed. Eventhandlers, remote scripts, redirects en de uiteindelijke browserisolatie vallen niet onder die twee controles. Houd de bestaande renderer-/sanitizer-/sandboxgrens dus onafhankelijk; breid deze checker niet stilzwijgend uit tot een onvolledige sanitizer. 
+HTML Living Standard
+
+5. isolated en interne links: de juiste broncontext is essentieel
+
+isolated: true is een scopeverklaring, geen isolatiemechanisme. Mijn belangrijkste runtimecheck hier:
+
+De productieadapter leidt de scope af uit de daadwerkelijke renderwijze of betrouwbare blokmetadata; aangeleverde HTML kan zichzelf niet met een attribuut of tekstveld vrijstellen van hostcontroles.
+
+Gebruik een strikt boolean-schema: isolated: "false" moet een invoerfout zijn, geen truthy waarde. Een gewone <div> wordt niet geïsoleerd doordat de input dat beweert.
+
+Houd vervolgens host- en embedded bevindingen apart. De headings en links van de verfcalculator mogen geen ontbrekende host-headings of host-links oplossen, maar hoeven ook niet volledig uit het rapport te verdwijnen. De buitenste iframe blijft onderdeel van de hostpagina; zijn src en titel blijven dus controleerbaar. Een iframe vertegenwoordigt een afzonderlijke documentcontext. 
+HTML Living Standard
+
+Voor interne links ontbreken nog twee belangrijke afspraken:
+
+De effectieve basis-URL. Relatieve links hebben een betrouwbare pagina-URL nodig. <base href="https://elders.example/"> kan hun betekenis veranderen. Ondersteun de effectieve base expliciet, of markeer relatieve-linkclassificatie bij zo’n constructie als niet betrouwbaar. Resolveer niet stilzwijgend tegen een verzonnen domein. 
+HTML Living Standard
+
+De definitie van intern. Gebruik genormaliseerde origins en expliciet toegestane canonical aliases, geen substring- of naïeve suffixvergelijking. Houd #fragment, query-only links en echte paginalinks uit elkaar wanneer de metric “interne contentlinks” heet. Een syntactisch interne URL is bovendien nog geen bestaande of bereikbare pagina. 
+URL Standard
+
+Controleer ook dat de HTML-fragmenten in dezelfde context worden beoordeeld als waarin de renderer ze invoegt. Documentparsing en fragmentparsing zijn niet overal uitwisselbaar, bijvoorbeeld binnen tabellen. 
+HTML Living Standard
+
+6. Alt, headings en rapportage: voorkom foutieve harde conclusies
+
+Bij afbeeldingen moeten ontbrekende alt, exact lege alt="" en alleen-whitespace-alt verschillende uitkomsten kunnen hebben. Lege alt is legitiem voor decoratieve afbeeldingen; een afbeelding als enige linkinhoud kan juist via zijn alt de linknaam leveren. Alleen gewone tekstnodes verzamelen geeft daar een foutieve “lege link”. 
+W3C
++2
+
+Bij headings moet bekend zijn of het thema de paginatitel al als <h1> toevoegt. Geen <h1> in een bodyfragment bewijst niet dat de hostpagina er geen heeft. Headingstructuur is contextafhankelijk; maak een conventieregel niet zonder meer tot HTML- of toegankelijkheidsfout. 
+W3C
+
+Een iframe-title controleert de naam van het iframe, niet de titel of toegankelijkheid van het document erin. “Niet leeg” is automatisch vast te stellen; “beschrijft de inhoud goed” maar beperkt. 
+W3C
+
+Mijn rapportage-eis zou verder zijn: bewijsfragmenten altijd als niet-uitvoerbare tekst weergeven, geen ongecontroleerde HTML-preview of automatisch actieve verdachte URL’s. Geef nooit een groen totaalresultaat doordat een fout is opgevangen en vervangen door een lege bevindingenlijst.
+
+7. Laat de demo dezelfde analyse bewijzen, niet méér
+
+“Exact dezelfde checkerbron” is goed, maar voeg dezelfde parserbuild, opties, beleidsversie en invoeradapter toe aan de pariteitstest. Laat een gedeeld corpus in de demo en in het uiteindelijke pluginartifact dezelfde gestructureerde resultaten produceren.
+
+Bind een zichtbaar rapport aan de gecontroleerde contentversie of inputhash, scope en checkerversie. Een aangepast document mag niet groen blijven op basis van een oudere snapshot. Controleer specifiek opgeslagen versus onopgeslagen editorinhoud; EmDash maakt daartussen expliciet onderscheid. 
+GitHub
+
+Ten slotte: bewijs “geen netwerk” aan de runtimegrens, niet alleen door afwezigheid van fetch in jullie checkerbron. Een Cloudflare Dynamic Worker erft standaard netwerktoegang wanneer de Loader die niet anders configureert. Verifieer dat zowel directe egress als ongeautoriseerde host-netwerkcalls worden geweigerd. 
+Cloudflare Docs
+
+Mijn advies voor v1: behoud de voorgestelde architectuur. Maak zelfstandige bundle-uitvoering, srcdoc-afhandeling, betrouwbare scopeherkomst, begrensde volledige analyse en snapshotpariteit harde acceptatievoorwaarden. Een groen resultaat betekent dan: deze volledige aangeleverde snapshot doorstaat de geïmplementeerde statische checks — niet dat de pagina veilig, volledig toegankelijk of de verfcalculator rekenkundig correct is.
+
+ChatGPT can make mistakes. Check important info.
+Latest response
+
+
+
+
+Thinking effort
+Response complete
+6
+Pro
+Consumes usage limits faster
+Pro, 5 of 5.
+Use Left and Right arrow keys to adjust power
+Locked, opens access options
+Latest
+GPT-5.6 Sol
+GPT-5.5
+Leaving on October 14

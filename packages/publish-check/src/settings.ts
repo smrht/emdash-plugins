@@ -18,6 +18,7 @@ export const SETTINGS_DEFAULTS: PublishCheckSettings = {
 	checkHeadingOrder: true,
 	checkInternalLinks: true,
 	checkLinkQuality: true,
+	checkEmbeds: true,
 };
 
 const SETTING_KEYS = Object.keys(SETTINGS_DEFAULTS) as Array<
@@ -66,6 +67,7 @@ export async function readSettings(ctx: PluginContext): Promise<PublishCheckSett
 		checkHeadingOrder: asBoolean(value.checkHeadingOrder, true),
 		checkInternalLinks: asBoolean(value.checkInternalLinks, true),
 		checkLinkQuality: asBoolean(value.checkLinkQuality, true),
+		checkEmbeds: asBoolean(value.checkEmbeds, true),
 	};
 }
 
@@ -100,6 +102,7 @@ export const settingsFormSchema = z.object({
 	checkHeadingOrder: z.boolean(),
 	checkInternalLinks: z.boolean(),
 	checkLinkQuality: z.boolean(),
+	checkEmbeds: z.boolean().default(true),
 });
 
 export type SettingsFormValues = z.infer<typeof settingsFormSchema>;
