@@ -15,6 +15,6 @@ Scope: Build, test and publish useful EmDash registry plugins for UlazAI and Bac
   EXPECT: BUILD_ARTIFACTS_VERIFIED
   EVIDENCE: mac-build-summary.json and both test logs:31tests,types,validation,bundles all pass; verify-builds.mjs BUILD_ARTIFACTS_VERIFIED, real1.4admin routes andscreenshots.
 - [ ] G5: Both releases are published and public registry pages and author links are read back; approvals pending at provider are explicitly distinguished.
-  EVIDENCE: BLOCKED: publish --url verified asset bytes, then TokenRefreshError Session expired before registry write. Official autofill did not populate password. Executor exec_2e5f7f73-c731-4651-9d17-0220b863d6b8 waits for requested unlock approval. Neither package submitted or public in registry.
+  EVIDENCE: BLOCKED: publish --url verified asset bytes, then TokenRefreshError Session expired before registry write. Official autofill did not populate password. Executor exec_2e5f7f73-c731-4651-9d17-0220b863d6b8 completed under standing automatic-unlock authorization and returned unlock_failed. Runbook requires human vault check; no retry/variations. Neither package submitted or public in registry.
 - [x] G6: Source is pushed and existing project administration records result URLs and exact tested limits.
   EVIDENCE: Source commits2bda953 and163fcdb pushed; GitHub release live, both archives HTTP200 and byte-identical. notion-proof.json confirms readback of all3 existing project pages; final source/evidence recording completed. Registry publication remains blocked underG5.
