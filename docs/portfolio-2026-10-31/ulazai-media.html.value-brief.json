@@ -6,6 +6,6 @@
   "functional_evidence": {
     "UlazAI": "Runtime sandbox tests: encrypted settings; explicit one-use paid intent with fixture HTTP201; real PNG bytes stored in test R2 and no duplicate import. Live external reads: model catalog25models; selected existing completed image HTTP200,3226285bytes.",
     "Backlinksbeheer": "Real saved fixture entry read by production bridge; HTTP200/404/403 classification and timestamps; author/anonymous denied; same-host pause resumable.",
-    "limitations": "Deterministic API fixture tests do not establish paid live generation. No claim of human review."
+    "limitations": "No paid generation performed. Existing-image API read and download HTTP200. Actual Node1.4 upload persisted the image, then exposed missing site-URL handling; corrected base-URL behavior is covered by the final sandbox test. Browser1.4 empty-state/admin pages verified at1440 and390px. Registry publication blocked by expired OAuth and pending Executor unlock approval."
   }
 }

@@ -1,0 +1,43 @@
+{
+  "runtime": "EmDash 1.4.0 Node/workerd on M1",
+  "checks": [
+    {
+      "slug": "ulazai-media",
+      "width": 1440,
+      "overflow": false,
+      "screenshot": "ulazai-media-1440.png"
+    },
+    {
+      "slug": "ulazai-media",
+      "width": 390,
+      "overflow": false,
+      "screenshot": "ulazai-media-390.png"
+    },
+    {
+      "slug": "backlinksbeheer-links",
+      "width": 1440,
+      "overflow": false,
+      "screenshot": "backlinksbeheer-links-1440.png"
+    },
+    {
+      "slug": "backlinksbeheer-links",
+      "width": 390,
+      "overflow": false,
+      "screenshot": "backlinksbeheer-links-390.png"
+    }
+  ],
+  "live_link_rows": [
+    {
+      "url": "https://backlinksbeheer.nl/#",
+      "status": "ok",
+      "http": 200,
+      "checkedAt": "2026-10-31T19:38:14.702Z"
+    },
+    {
+      "url": "https://emdashplugins.nl/this-page-does-not-exist-qa#",
+      "status": "missing",
+      "http": 404,
+      "checkedAt": "2026-10-31T19:38:16.475Z"
+    }
+  ]
+}

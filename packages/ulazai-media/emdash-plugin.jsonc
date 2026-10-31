@@ -30,7 +30,17 @@
     "artifacts": {
       "icon": {
         "file": "./images/icon.png"
-      }
+      },
+      "screenshots": [
+        {
+          "file": "./images/admin-desktop.png",
+          "lang": "en"
+        },
+        {
+          "file": "./images/admin-mobile.png",
+          "lang": "en"
+        }
+      ]
     }
   },
   "admin": {

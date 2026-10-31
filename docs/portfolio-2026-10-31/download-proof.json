@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "ulazai-media",
+    "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/ulazai-media-0.1.0.tar.gz",
+    "http": 200,
+    "bytes": 21092,
+    "sha256": "c572b0b837582fedbfeb5a923d20b22b7cada12e04444e62aabaf780afafda17",
+    "matches_local": true
+  },
+  {
+    "slug": "backlinksbeheer-links",
+    "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/backlinksbeheer-links-0.1.0.tar.gz",
+    "http": 200,
+    "bytes": 64372,
+    "sha256": "27831fac82d8e822317ef2ffe23f5eaec71ce299e7a9f3540e84bcfe5c0bdca8",
+    "matches_local": true
+  }
+]
