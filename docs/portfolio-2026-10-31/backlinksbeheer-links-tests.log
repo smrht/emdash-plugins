@@ -5,7 +5,7 @@
 ✔ Manifest is valid: /Users/_agentboxworker/.local/state/agentbox-mac/jobs/a7733f35-f821-4ea6-9bcd-e62bee1aaa03/workspace/backlinksbeheer-links/emdash-plugin.jsonc
 ℹ Default release hosting: publisher PDS blobs
 
-[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/Users/_agentboxworker/.local/state/agentbox-mac/jobs/a7733f35-f821-4ea6-9bcd-e62bee1aaa03/workspace/backlinksbeheer-links[39m
+ RUN  v4.1.12 /Users/_agentboxworker/.local/state/agentbox-mac/jobs/a7733f35-f821-4ea6-9bcd-e62bee1aaa03/workspace/backlinksbeheer-links
 
 ℹ entry: src/plugin.ts
 ℹ tsconfig: tsconfig.json
@@ -25,22 +25,22 @@
 ℹ ../scratch/emdash-build-AOOtZv/plugin-probe/plugin.mjs  178.40 kB │ gzip: 50.20 kB
 ℹ 1 files, total: 178.40 kB
 ✔ Build complete in 13ms
-[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mchecks saved outbound links even before the site URL is configured
-[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+stdout | tests/runtime.test.ts > checks saved outbound links even before the site URL is configured
+EmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
 
-[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mrequires an admin account on the actual private route
-[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+stdout | tests/runtime.test.ts > requires an admin account on the actual private route
+EmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
 
-[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2ma polite same-host pause can be resumed instead of permanently locking the batch
-[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+stdout | tests/runtime.test.ts > a polite same-host pause can be resumed instead of permanently locking the batch
+EmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
 
-[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mrenders a real host-validated warning when inspection is limited
-[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+stdout | tests/runtime.test.ts > renders a real host-validated warning when inspection is limited
+EmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
 
- [32m✓[39m tests/runtime.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1346[2mms[22m[39m
-   [33m[2m✓[22m[39m checks saved outbound links even before the site URL is configured [33m 414[2mms[22m[39m
-   [33m[2m✓[22m[39m a polite same-host pause can be resumed instead of permanently locking the batch [33m 310[2mms[22m[39m
-   [33m[2m✓[22m[39m renders a real host-validated warning when inspection is limited [33m 329[2mms[22m[39m
+ ✓ tests/runtime.test.ts (4 tests) 1346ms
+   ✓ checks saved outbound links even before the site URL is configured  414ms
+   ✓ a polite same-host pause can be resumed instead of permanently locking the batch  310ms
+   ✓ renders a real host-validated warning when inspection is limited  329ms
 ℹ entry: src/plugin.ts
 ℹ tsconfig: tsconfig.json
 ℹ Build start
@@ -59,10 +59,9 @@
 ℹ ../scratch/emdash-build-N9EyzD/plugin-probe/plugin.mjs  178.40 kB │ gzip: 50.20 kB
 ℹ 1 files, total: 178.40 kB
 ✔ Build complete in 12ms
- [32m✓[39m tests/checks.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ ✓ tests/checks.test.ts (11 tests) 4ms
 
-[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
-[2m      Tests [22m [1m[32m15 passed[39m[22m[90m (15)[39m
-[2m   Start at [22m 20:26:03
-[2m   Duration [22m 12.83s[2m (transform 3.41s, setup 0ms, import 6.50s, tests 1.35s, environment 0ms)[22m
-
+ Test Files  2 passed (2)
+      Tests  15 passed (15)
+   Start at  20:26:03
+   Duration  12.83s (transform 3.41s, setup 0ms, import 6.50s, tests 1.35s, environment 0ms)
