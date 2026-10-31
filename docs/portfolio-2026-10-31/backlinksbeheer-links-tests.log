@@ -1,0 +1,68 @@
+
+> backlinksbeheer-links@0.1.0 test
+> emdash-plugin validate && vitest run
+
+✔ Manifest is valid: /Users/_agentboxworker/.local/state/agentbox-mac/jobs/a7733f35-f821-4ea6-9bcd-e62bee1aaa03/workspace/backlinksbeheer-links/emdash-plugin.jsonc
+ℹ Default release hosting: publisher PDS blobs
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/Users/_agentboxworker/.local/state/agentbox-mac/jobs/a7733f35-f821-4ea6-9bcd-e62bee1aaa03/workspace/backlinksbeheer-links[39m
+
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-AOOtZv/runtime/plugin.mjs  122.68 kB │ gzip: 43.77 kB
+ℹ 1 files, total: 122.68 kB
+✔ Build complete in 46ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-AOOtZv/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 1021ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-AOOtZv/plugin-probe/plugin.mjs  178.40 kB │ gzip: 50.20 kB
+ℹ 1 files, total: 178.40 kB
+✔ Build complete in 13ms
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mchecks saved outbound links even before the site URL is configured
+[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mrequires an admin account on the actual private route
+[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2ma polite same-host pause can be resumed instead of permanently locking the batch
+[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mrenders a real host-validated warning when inspection is limited
+[22m[39mEmDash: Loaded sandboxed plugin backlinksbeheer-links:0.1.0 with capabilities: [content:read, schema:read, network:request:unrestricted, network:request]
+
+ [32m✓[39m tests/runtime.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1346[2mms[22m[39m
+   [33m[2m✓[22m[39m checks saved outbound links even before the site URL is configured [33m 414[2mms[22m[39m
+   [33m[2m✓[22m[39m a polite same-host pause can be resumed instead of permanently locking the batch [33m 310[2mms[22m[39m
+   [33m[2m✓[22m[39m renders a real host-validated warning when inspection is limited [33m 329[2mms[22m[39m
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-N9EyzD/runtime/plugin.mjs  122.68 kB │ gzip: 43.77 kB
+ℹ 1 files, total: 122.68 kB
+✔ Build complete in 22ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-N9EyzD/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 7ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-N9EyzD/plugin-probe/plugin.mjs  178.40 kB │ gzip: 50.20 kB
+ℹ 1 files, total: 178.40 kB
+✔ Build complete in 12ms
+ [32m✓[39m tests/checks.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m   Start at [22m 20:26:03
+[2m   Duration [22m 12.83s[2m (transform 3.41s, setup 0ms, import 6.50s, tests 1.35s, environment 0ms)[22m
+

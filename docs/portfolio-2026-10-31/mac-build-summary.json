@@ -1,0 +1,62 @@
+{
+  "platform": "darwin",
+  "arch": "arm64",
+  "results": [
+    {
+      "slug": "ulazai-media",
+      "passed": true,
+      "steps": [
+        {
+          "step": "install --ignore-scripts --no-audit --no-fund --package-lock=false",
+          "exit": 0
+        },
+        {
+          "step": "run validate",
+          "exit": 0
+        },
+        {
+          "step": "run typecheck",
+          "exit": 0
+        },
+        {
+          "step": "run test",
+          "exit": 0
+        },
+        {
+          "step": "run bundle",
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "slug": "backlinksbeheer-links",
+      "passed": true,
+      "steps": [
+        {
+          "step": "install --ignore-scripts --no-audit --no-fund --package-lock=false",
+          "exit": 0
+        },
+        {
+          "step": "run validate",
+          "exit": 0
+        },
+        {
+          "step": "run typecheck",
+          "exit": 0
+        },
+        {
+          "step": "run test",
+          "exit": 0
+        },
+        {
+          "step": "run bundle",
+          "exit": 0
+        }
+      ]
+    }
+  ],
+  "mac_jobs": [
+    "60c56513-eff1-49c2-8f0b-8447fe4f2bcb",
+    "a7733f35-f821-4ea6-9bcd-e62bee1aaa03"
+  ]
+}

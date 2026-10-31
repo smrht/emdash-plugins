@@ -1,0 +1,11 @@
+{
+  "visitor_task": "Use Backlinksbeheer Link Check in the actual EmDash admin to produce the result described by its install instructions.",
+  "unique_value": "Working sandboxed plugin. Runtime verification includes real content/media storage, private admin authorization and duplicate-action protection; 16 UlazAI and 14 Backlinksbeheer tests passed. UlazAI model catalog and existing image endpoint returned HTTP200; no paid generation performed.",
+  "separate_page_reason": "Independent installable product package with distinct capabilities and product author URL; not a second news page.",
+  "inventory": "Existing Publish Check serves SEO publication validation, not generation/media imports or outbound HTTP inspection. Product and plugin package READMEs inspected.",
+  "functional_evidence": {
+    "UlazAI": "Runtime sandbox tests: encrypted settings; explicit one-use paid intent with fixture HTTP201; real PNG bytes stored in test R2 and no duplicate import. Live external reads: model catalog25models; selected existing completed image HTTP200,3226285bytes.",
+    "Backlinksbeheer": "Real saved fixture entry read by production bridge; HTTP200/404/403 classification and timestamps; author/anonymous denied; same-host pause resumable.",
+    "limitations": "Deterministic API fixture tests do not establish paid live generation. No claim of human review."
+  }
+}

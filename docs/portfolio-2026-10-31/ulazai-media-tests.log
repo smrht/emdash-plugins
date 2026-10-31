@@ -1,0 +1,69 @@
+
+> ulazai-media@0.1.0 test
+> emdash-plugin validate && vitest run
+
+✔ Manifest is valid: /Users/_agentboxworker/.local/state/agentbox-mac/jobs/60c56513-eff1-49c2-8f0b-8447fe4f2bcb/workspace/ulazai-media/emdash-plugin.jsonc
+ℹ Default release hosting: publisher PDS blobs
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/Users/_agentboxworker/.local/state/agentbox-mac/jobs/60c56513-eff1-49c2-8f0b-8447fe4f2bcb/workspace/ulazai-media[39m
+
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-yeO6Hz/runtime/plugin.mjs  65.63 kB │ gzip: 16.26 kB
+ℹ 1 files, total: 65.63 kB
+✔ Build complete in 43ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-yeO6Hz/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 864ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-yeO6Hz/plugin-probe/plugin.mjs  113.77 kB │ gzip: 21.55 kB
+ℹ 1 files, total: 113.77 kB
+✔ Build complete in 10ms
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mrenders the actual admin page and rejects a missing key without a request
+[22m[39mEmDash: Loaded sandboxed plugin ulazai-media:0.1.0 with capabilities: [media:read, media:write, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mstores the key encrypted and never reflects it into the admin response
+[22m[39mEmDash: Loaded sandboxed plugin ulazai-media:0.1.0 with capabilities: [media:read, media:write, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mimports bytes once even when the site URL has not been configured
+[22m[39mEmDash: Loaded sandboxed plugin ulazai-media:0.1.0 with capabilities: [media:read, media:write, network:request:unrestricted, network:request]
+
+[90mstdout[2m | tests/runtime.test.ts[2m > [22m[2mcannot charge twice with the same confirmation
+[22m[39mEmDash: Loaded sandboxed plugin ulazai-media:0.1.0 with capabilities: [media:read, media:write, network:request:unrestricted, network:request]
+
+ [32m✓[39m tests/runtime.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1309[2mms[22m[39m
+   [33m[2m✓[22m[39m renders the actual admin page and rejects a missing key without a request [33m 349[2mms[22m[39m
+   [33m[2m✓[22m[39m stores the key encrypted and never reflects it into the admin response [33m 312[2mms[22m[39m
+   [33m[2m✓[22m[39m imports bytes once even when the site URL has not been configured [33m 325[2mms[22m[39m
+   [33m[2m✓[22m[39m cannot charge twice with the same confirmation [33m 323[2mms[22m[39m
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-tqg7tE/runtime/plugin.mjs  65.63 kB │ gzip: 16.26 kB
+ℹ 1 files, total: 65.63 kB
+✔ Build complete in 18ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-tqg7tE/runtime/plugin.d.mts  0.16 kB │ gzip: 0.13 kB
+ℹ 1 files, total: 0.16 kB
+✔ Build complete in 7ms
+ℹ entry: src/plugin.ts
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ ../scratch/emdash-build-tqg7tE/plugin-probe/plugin.mjs  113.77 kB │ gzip: 21.55 kB
+ℹ 1 files, total: 113.77 kB
+✔ Build complete in 10ms
+ [32m✓[39m tests/service.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m16 passed[39m[22m[90m (16)[39m
+[2m   Start at [22m 20:23:08
+[2m   Duration [22m 13.13s[2m (transform 2.99s, setup 7.35s, import 926ms, tests 1.31s, environment 1ms)[22m
+

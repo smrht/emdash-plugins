@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+  "slug": "backlinksbeheer-links",
+  "publisher": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+  "license": "MIT",
+  "author": {
+    "name": "Backlinksbeheer",
+    "url": "https://backlinksbeheer.nl"
+  },
+  "security": {
+    "email": "security@emdashplugins.nl"
+  },
+  "repo": "https://github.com/smrht/emdash-plugins",
+  "name": "Backlinksbeheer Link Check",
+  "description": "Check outbound links in saved EmDash entries with HTTP evidence, timestamps and honest unknown results.",
+  "keywords": [
+    "seo",
+    "links",
+    "monitoring"
+  ],
+  "capabilities": [
+    "content:read",
+    "schema:read",
+    "network:request:unrestricted"
+  ],
+  "allowedHosts": [],
+  "release": {
+    "requires": {
+      "env:emdash": ">=1.1.0"
+    },
+    "artifacts": {
+      "icon": {
+        "file": "./images/icon.png"
+      }
+    }
+  },
+  "admin": {
+    "pages": [
+      {
+        "path": "/links",
+        "label": "Backlinksbeheer Link Check",
+        "icon": "link"
+      }
+    ]
+  },
+  "sections": {
+    "description": "Check outbound links from saved EmDash entries with [Backlinksbeheer](https://backlinksbeheer.nl). No account or API key required.\n\nChoose a content collection and saved entry, inspect its links, then check up to two links per step. Every observation includes the HTTP status and measurement time. A one-minute pause applies before contacting the same host again.\n\n- HTTP 2xx: reachable.\n- HTTP 3xx: redirect observed; destination shown, not followed.\n- HTTP 404 or 410: missing at the time checked, not proof of permanent removal.\n- HTTP 403, 429, server errors and timeouts: unknown.\n\nReads saved Portable Text links and static HTML anchors. Ignores scripts, same-site links, email links and private IP literals. HEAD first, with one GET fallback for servers that reject HEAD. At most 200 distinct outbound links per entry; a warning appears when content exceeds the inspection limits.\n\nRequires EmDash 1.1+ and a plugin sandbox. Permissions: content:read, schema:read and unrestricted network requests. Only linked URLs go to their destination websites; entry text is not uploaded to Backlinksbeheer. Reports stay in the site's plugin storage. The private admin page requires plugin-management permission.\n\nNo link edits, redirects, background crawling or account synchronization. The latest report is shared by site administrators. This complements account-based backlink monitoring on Backlinksbeheer.\n\n[Source and full instructions](https://github.com/smrht/emdash-plugins/tree/main/packages/backlinksbeheer-links)."
+  }
+}

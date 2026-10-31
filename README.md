@@ -12,6 +12,8 @@ in EmDash you approve a plugin's permissions before it runs.
 | Plugin | What it does | Permissions |
 |---|---|---|
 | [Publish Check](packages/publish-check) | Blocks publishing when the title, meta description, headings, alt text or links are broken. | 1: `hooks.content-policy:register`. No network, no content read or write. |
+| [UlazAI Media](packages/ulazai-media) | Generate an article image, check its status and save a completed result in the media library. | Media write and network requests. Paid generation needs explicit confirmation. |
+| [Backlinksbeheer Link Check](packages/backlinksbeheer-links) | Inspect outbound links from saved entries with HTTP observations and timestamps. | Content/schema read and network requests. No content changes. |
 
 More are on the way. Follow [emdashplugins.nl](https://emdashplugins.nl) or
 [@emdashplugins.bsky.social](https://bsky.app/profile/emdashplugins.bsky.social).
