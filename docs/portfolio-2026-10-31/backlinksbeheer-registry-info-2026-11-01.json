@@ -1,0 +1,163 @@
+{
+  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+  "cid": "bafyreiesmauvp56kbqwdtz32ux5zomskwp36hntdafu3jryz6e5ht42cra",
+  "did": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+  "slug": "backlinksbeheer-links",
+  "profile": {
+    "$type": "com.emdashcms.experimental.package.profile",
+    "id": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+    "type": "emdash-plugin",
+    "license": "MIT",
+    "authors": [
+      {
+        "url": "https://backlinksbeheer.nl",
+        "name": "Backlinksbeheer"
+      }
+    ],
+    "security": [
+      {
+        "email": "security@emdashplugins.nl"
+      }
+    ],
+    "name": "Backlinksbeheer Link Check",
+    "description": "Check outbound links in saved EmDash entries with HTTP evidence, timestamps and honest unknown results.",
+    "keywords": [
+      "seo",
+      "links",
+      "monitoring"
+    ],
+    "sections": {
+      "description": "Check outbound links from saved EmDash entries with [Backlinksbeheer](https://backlinksbeheer.nl). No account or API key required.\n\nChoose a content collection and saved entry, inspect its links, then check up to two links per step. Every observation includes the HTTP status and measurement time. A one-minute pause applies before contacting the same host again.\n\n- HTTP 2xx: reachable.\n- HTTP 3xx: redirect observed; destination shown, not followed.\n- HTTP 404 or 410: missing at the time checked, not proof of permanent removal.\n- HTTP 403, 429, server errors and timeouts: unknown.\n\nReads saved Portable Text links and static HTML anchors. Ignores scripts, same-site links, email links and private IP literals. HEAD first, with one GET fallback for servers that reject HEAD. At most 200 distinct outbound links per entry; a warning appears when content exceeds the inspection limits.\n\nRequires EmDash 1.1+ and a plugin sandbox. Permissions: content:read, schema:read and unrestricted network requests. Only linked URLs go to their destination websites; entry text is not uploaded to Backlinksbeheer. Reports stay in the site's plugin storage. The private admin page requires plugin-management permission.\n\nNo link edits, redirects, background crawling or account synchronization. The latest report is shared by site administrators. This complements account-based backlink monitoring on Backlinksbeheer.\n\n[Source and full instructions](https://github.com/smrht/emdash-plugins/tree/main/packages/backlinksbeheer-links)."
+    },
+    "extensions": {
+      "com.emdashcms.experimental.package.profileExtension": {
+        "$type": "com.emdashcms.experimental.package.profileExtension",
+        "repository": "https://github.com/smrht/emdash-plugins",
+        "releasePolicy": {
+          "$type": "com.emdashcms.experimental.package.profileExtension#releasePolicy",
+          "requireProvenance": false
+        }
+      }
+    },
+    "lastUpdated": "2026-11-01T07:29:04.076Z",
+    "slug": "backlinksbeheer-links"
+  },
+  "indexedAt": "2026-11-01T07:30:51.839Z",
+  "labels": [
+    {
+      "ver": 1,
+      "src": "did:web:labels.emdashcms.com",
+      "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+      "val": "listing-passed",
+      "cts": "2026-11-01T07:31:07.172Z",
+      "cid": "bafyreiesmauvp56kbqwdtz32ux5zomskwp36hntdafu3jryz6e5ht42cra"
+    }
+  ],
+  "handle": "emdashplugins.bsky.social",
+  "latestVersion": "0.1.0",
+  "historicalReleaseCount": 1,
+  "releaseHistoryComplete": true,
+  "latestRelease": {
+    "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+    "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy",
+    "did": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+    "package": "backlinksbeheer-links",
+    "version": "0.1.0",
+    "release": {
+      "$type": "com.emdashcms.experimental.package.release",
+      "package": "backlinksbeheer-links",
+      "version": "0.1.0",
+      "artifacts": {
+        "icon": {
+          "blob": {
+            "ref": {
+              "$link": "bafkreiftnqhg72o66i3eginzz3fpdm4fyfucfhsmnsqdi6et7saawg4lqm"
+            },
+            "size": 17794,
+            "$type": "blob",
+            "mimeType": "image/png"
+          },
+          "width": 512,
+          "height": 512,
+          "checksum": "bciqlg3aon7u554rwimq3ttwk6gzylqliekpey3fagr4jh7eabmnyxay",
+          "contentType": "image/png"
+        },
+        "package": {
+          "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/backlinksbeheer-links-0.1.0.tar.gz",
+          "checksum": "bciqcpay7vsbnr2bcgf7pf77ch5pk5ry44km6pkptkqhijph6lqf5zka",
+          "contentType": "application/gzip"
+        },
+        "screenshots": [
+          {
+            "blob": {
+              "ref": {
+                "$link": "bafkreifm3sy6j4cist5azvlwwdoaqqwnin6atur4lb2ytiddr76qkh6oli"
+              },
+              "size": 129063,
+              "$type": "blob",
+              "mimeType": "image/png"
+            },
+            "lang": "en",
+            "width": 1440,
+            "height": 900,
+            "checksum": "bciqkzxfr4tyerfh2btkxnmg4bbbm2q34bhjdywdvrgqghd75aup44wq",
+            "contentType": "image/png"
+          },
+          {
+            "blob": {
+              "ref": {
+                "$link": "bafkreiceprin4jbg52ikbumjuajao2zshk4tstfdk6qz5isauetcdsrxqe"
+              },
+              "size": 68635,
+              "$type": "blob",
+              "mimeType": "image/png"
+            },
+            "lang": "en",
+            "width": 390,
+            "height": 844,
+            "checksum": "bciqei7cq3yscn3uqudiytiasa5vteovzhfgkgv5bt2rebijgehfdpai",
+            "contentType": "image/png"
+          }
+        ]
+      },
+      "requires": {
+        "env:emdash": ">=1.1.0"
+      },
+      "repo": "https://github.com/smrht/emdash-plugins",
+      "extensions": {
+        "com.emdashcms.experimental.package.releaseExtension": {
+          "$type": "com.emdashcms.experimental.package.releaseExtension",
+          "declaredAccess": {
+            "schema": {
+              "read": {}
+            },
+            "content": {
+              "read": {}
+            },
+            "network": {
+              "request": {}
+            }
+          }
+        }
+      }
+    },
+    "artifactCaches": [
+      {
+        "$type": "com.emdashcms.experimental.aggregator.defs#recordScopedBlobCache",
+        "serviceEndpoint": "https://cdn.em-da.sh"
+      }
+    ],
+    "indexedAt": "2026-11-01T07:30:52.879Z",
+    "labels": [
+      {
+        "ver": 1,
+        "src": "did:web:labels.emdashcms.com",
+        "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+        "val": "listing-passed",
+        "cts": "2026-11-01T07:31:15.348Z",
+        "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy"
+      }
+    ]
+  },
+  "hosting": "external URL"
+}

@@ -1,0 +1,509 @@
+{
+  "checked_at": "2026-11-01T07:33:01.128341+00:00",
+  "unlock_status": "unlocked",
+  "unlock_execution": "exec_0a40acc9-f53c-4e74-8e39-1c6566f43044",
+  "login_exit": 0,
+  "publisher_did": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+  "packages": [
+    {
+      "identifier": "@emdashplugins.bsky.social/ulazai-media",
+      "profile": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+      "release": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+      "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa",
+      "checksum": "bciqmk4vqxa3vql7nx7vvver5eczcw7fnuexaircomkvlv54av6x5ufy",
+      "hosting": "url",
+      "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/ulazai-media-0.1.0.tar.gz",
+      "profileCreated": true,
+      "releaseOverwritten": false,
+      "page": "https://plugins.emdashcms.com/plugins/@emdashplugins.bsky.social/ulazai-media",
+      "pds_records": {
+        "profile": {
+          "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+          "cid": "bafyreiaxzf4bz5tv4w3e44q6tle5bb53emrwfr4trsbb72iw3eze536hgu",
+          "value": {
+            "id": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+            "name": "UlazAI Media",
+            "slug": "ulazai-media",
+            "type": "emdash-plugin",
+            "$type": "com.emdashcms.experimental.package.profile",
+            "authors": [
+              {
+                "url": "https://ulazai.com",
+                "name": "UlazAI"
+              }
+            ],
+            "license": "MIT",
+            "keywords": [
+              "images",
+              "media",
+              "ulazai"
+            ],
+            "sections": {
+              "description": "Create article images with [UlazAI](https://ulazai.com) from the EmDash admin and save completed results in your media library.\n\n1. Add your UlazAI API key in plugin settings. EmDash encrypts it with the site's EMDASH_ENCRYPTION_KEY.\n2. Load the model catalog, choose a model and its supported aspect ratio and quality, then enter your prompt.\n3. Prepare the image, read the estimated credits and confirm the paid generation. The service sets the final charge.\n4. Refresh status, then save the completed image in the media library. Add alt text when using it in your article.\n\nAlready have an image? Enter its UlazAI generation ID to import it without generating again.\n\nRequires EmDash 1.1+, a plugin sandbox and an eligible UlazAI account. New generations use paid credits. No automatic paid retries; each confirmation can submit once. PNG, JPEG and WebP imports up to 4 MiB. No automatic publishing or editing of articles.\n\nPermissions: media:write and unrestricted network requests. Requests go to ulazai.com and the image hosts returned by its API. Your authorization header is never sent to image hosts. The private page requires plugin-management permission. The configured account and latest-result panel are shared by site administrators.\n\nPrompts go to UlazAI after confirmation. Result IDs, one-use confirmations and imported media IDs stay in this site's plugin storage. An uncertain submission or import is not automatically retried: check the UlazAI history or media library first.\n\n[Source and full instructions](https://github.com/smrht/emdash-plugins/tree/main/packages/ulazai-media)."
+            },
+            "security": [
+              {
+                "email": "security@emdashplugins.nl"
+              }
+            ],
+            "extensions": {
+              "com.emdashcms.experimental.package.profileExtension": {
+                "$type": "com.emdashcms.experimental.package.profileExtension",
+                "repository": "https://github.com/smrht/emdash-plugins",
+                "releasePolicy": {
+                  "$type": "com.emdashcms.experimental.package.profileExtension#releasePolicy",
+                  "requireProvenance": false
+                }
+              }
+            },
+            "description": "Generate article images with UlazAI and import completed results into the EmDash media library.",
+            "lastUpdated": "2026-11-01T07:28:53.596Z"
+          }
+        },
+        "release": {
+          "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+          "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa",
+          "value": {
+            "repo": "https://github.com/smrht/emdash-plugins",
+            "$type": "com.emdashcms.experimental.package.release",
+            "package": "ulazai-media",
+            "version": "0.1.0",
+            "requires": {
+              "env:emdash": ">=1.1.0"
+            },
+            "artifacts": {
+              "icon": {
+                "blob": {
+                  "ref": {
+                    "$link": "bafkreiecn2s6abtorujmj5j6i2tt3kt6ebcfahbdp3d5u3zlqjbrtnuf5a"
+                  },
+                  "size": 1692,
+                  "$type": "blob",
+                  "mimeType": "image/png"
+                },
+                "width": 180,
+                "height": 180,
+                "checksum": "bciqie3vf4adg5disyt2t4rvhhwvh4icekaocg7wh3jxsxasddg3il2a",
+                "contentType": "image/png"
+              },
+              "package": {
+                "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/ulazai-media-0.1.0.tar.gz",
+                "checksum": "bciqmk4vqxa3vql7nx7vvver5eczcw7fnuexaircomkvlv54av6x5ufy",
+                "contentType": "application/gzip"
+              },
+              "screenshots": [
+                {
+                  "blob": {
+                    "ref": {
+                      "$link": "bafkreiasme3jicnukltcouyybu3elapybcikgpkv76ebufzvrd4jejp27m"
+                    },
+                    "size": 87798,
+                    "$type": "blob",
+                    "mimeType": "image/png"
+                  },
+                  "lang": "en",
+                  "width": 1440,
+                  "height": 900,
+                  "checksum": "bciqbeyjwsqe3iuxge5jrqdjwiwa7qcequm6vl74idiltlchysis7v6y",
+                  "contentType": "image/png"
+                },
+                {
+                  "blob": {
+                    "ref": {
+                      "$link": "bafkreibla3zbm4tjxpe4tat3f7rakce5bhydi477vtd7or7tdu47prez6y"
+                    },
+                    "size": 47861,
+                    "$type": "blob",
+                    "mimeType": "image/png"
+                  },
+                  "lang": "en",
+                  "width": 390,
+                  "height": 844,
+                  "checksum": "bciqcwbxsczzgto6jzgbhwl7cauej2cpqgrz77lgh65d7ghjz67cjt5q",
+                  "contentType": "image/png"
+                }
+              ]
+            },
+            "extensions": {
+              "com.emdashcms.experimental.package.releaseExtension": {
+                "$type": "com.emdashcms.experimental.package.releaseExtension",
+                "declaredAccess": {
+                  "media": {
+                    "read": {},
+                    "write": {}
+                  },
+                  "network": {
+                    "request": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "assessments": {
+        "profile": {
+          "assessments": [
+            {
+              "id": "assessment-v1-c572076b318d04adee693ae514f8e232940f33cc6e8d855ea5dbd29c927ebd8a",
+              "src": "did:web:labels.emdashcms.com",
+              "subject": {
+                "kind": "profile",
+                "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+                "cid": "bafyreiaxzf4bz5tv4w3e44q6tle5bb53emrwfr4trsbb72iw3eze536hgu"
+              },
+              "state": "passed",
+              "coverage": {
+                "text": "complete",
+                "links": "complete",
+                "media": "not-present"
+              },
+              "reasonCodes": [
+                "automatic-pass"
+              ],
+              "findings": [],
+              "summary": "The listing metadata is eligible under the current assessment policy.",
+              "assessmentSchemaVersion": 1,
+              "policyVersion": "listing-metadata-v2",
+              "parserVersion": "canonical-listing-input-v1",
+              "models": [
+                {
+                  "purpose": "text",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "6bffa4fe3d04177aa59d7909f2bdb21a84784444a95fc6be6da7bbc3e86eb3db"
+                }
+              ],
+              "labels": [
+                {
+                  "ver": 1,
+                  "src": "did:web:labels.emdashcms.com",
+                  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+                  "cid": "bafyreiaxzf4bz5tv4w3e44q6tle5bb53emrwfr4trsbb72iw3eze536hgu",
+                  "val": "listing-passed",
+                  "cts": "2026-11-01T07:31:04.012Z",
+                  "sig": {
+                    "$bytes": "SW4js3k6ecla5m32aQbTXOryWdYOBOWys+L5kYUCn8p02LaV+JXiuIkQBblGUSdvV7Vz6y72D0J2XsSXUl/RLw=="
+                  }
+                }
+              ],
+              "createdAt": "2026-11-01T07:30:58.690Z",
+              "completedAt": "2026-11-01T07:31:04.012Z"
+            }
+          ]
+        },
+        "release": {
+          "assessments": [
+            {
+              "id": "assessment-v1-d31abfbbc30cb2fdb9c453b3b89a907092194597cb031c51e89156fd8a62bc35",
+              "src": "did:web:labels.emdashcms.com",
+              "subject": {
+                "kind": "release",
+                "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+                "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa"
+              },
+              "state": "passed",
+              "coverage": {
+                "text": "complete",
+                "links": "complete",
+                "media": "complete"
+              },
+              "reasonCodes": [
+                "automatic-pass"
+              ],
+              "findings": [],
+              "summary": "The listing metadata is eligible under the current assessment policy.",
+              "assessmentSchemaVersion": 1,
+              "policyVersion": "listing-metadata-v2",
+              "parserVersion": "canonical-listing-input-v1",
+              "models": [
+                {
+                  "purpose": "text",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "6bffa4fe3d04177aa59d7909f2bdb21a84784444a95fc6be6da7bbc3e86eb3db"
+                },
+                {
+                  "purpose": "image",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "42367b4f9069e5392fe51a804e4c526ad38fc406cbe7542beb28557c923cb5b3"
+                }
+              ],
+              "labels": [
+                {
+                  "ver": 1,
+                  "src": "did:web:labels.emdashcms.com",
+                  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+                  "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa",
+                  "val": "listing-passed",
+                  "cts": "2026-11-01T07:31:13.620Z",
+                  "sig": {
+                    "$bytes": "/okCwkkjAqEWWa/YvaqL2m1d7L6CWGiRaqLrZFHi+Qh7TFTksPVV04HvCIb/lHU8kKK6UdxInOgvvgxll6eeWA=="
+                  }
+                }
+              ],
+              "createdAt": "2026-11-01T07:31:00.368Z",
+              "completedAt": "2026-11-01T07:31:13.620Z"
+            }
+          ]
+        }
+      },
+      "public_http": 200
+    },
+    {
+      "identifier": "@emdashplugins.bsky.social/backlinksbeheer-links",
+      "profile": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+      "release": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+      "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy",
+      "checksum": "bciqcpay7vsbnr2bcgf7pf77ch5pk5ry44km6pkptkqhijph6lqf5zka",
+      "hosting": "url",
+      "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/backlinksbeheer-links-0.1.0.tar.gz",
+      "profileCreated": true,
+      "releaseOverwritten": false,
+      "page": "https://plugins.emdashcms.com/plugins/@emdashplugins.bsky.social/backlinksbeheer-links",
+      "pds_records": {
+        "profile": {
+          "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+          "cid": "bafyreiesmauvp56kbqwdtz32ux5zomskwp36hntdafu3jryz6e5ht42cra",
+          "value": {
+            "id": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+            "name": "Backlinksbeheer Link Check",
+            "slug": "backlinksbeheer-links",
+            "type": "emdash-plugin",
+            "$type": "com.emdashcms.experimental.package.profile",
+            "authors": [
+              {
+                "url": "https://backlinksbeheer.nl",
+                "name": "Backlinksbeheer"
+              }
+            ],
+            "license": "MIT",
+            "keywords": [
+              "seo",
+              "links",
+              "monitoring"
+            ],
+            "sections": {
+              "description": "Check outbound links from saved EmDash entries with [Backlinksbeheer](https://backlinksbeheer.nl). No account or API key required.\n\nChoose a content collection and saved entry, inspect its links, then check up to two links per step. Every observation includes the HTTP status and measurement time. A one-minute pause applies before contacting the same host again.\n\n- HTTP 2xx: reachable.\n- HTTP 3xx: redirect observed; destination shown, not followed.\n- HTTP 404 or 410: missing at the time checked, not proof of permanent removal.\n- HTTP 403, 429, server errors and timeouts: unknown.\n\nReads saved Portable Text links and static HTML anchors. Ignores scripts, same-site links, email links and private IP literals. HEAD first, with one GET fallback for servers that reject HEAD. At most 200 distinct outbound links per entry; a warning appears when content exceeds the inspection limits.\n\nRequires EmDash 1.1+ and a plugin sandbox. Permissions: content:read, schema:read and unrestricted network requests. Only linked URLs go to their destination websites; entry text is not uploaded to Backlinksbeheer. Reports stay in the site's plugin storage. The private admin page requires plugin-management permission.\n\nNo link edits, redirects, background crawling or account synchronization. The latest report is shared by site administrators. This complements account-based backlink monitoring on Backlinksbeheer.\n\n[Source and full instructions](https://github.com/smrht/emdash-plugins/tree/main/packages/backlinksbeheer-links)."
+            },
+            "security": [
+              {
+                "email": "security@emdashplugins.nl"
+              }
+            ],
+            "extensions": {
+              "com.emdashcms.experimental.package.profileExtension": {
+                "$type": "com.emdashcms.experimental.package.profileExtension",
+                "repository": "https://github.com/smrht/emdash-plugins",
+                "releasePolicy": {
+                  "$type": "com.emdashcms.experimental.package.profileExtension#releasePolicy",
+                  "requireProvenance": false
+                }
+              }
+            },
+            "description": "Check outbound links in saved EmDash entries with HTTP evidence, timestamps and honest unknown results.",
+            "lastUpdated": "2026-11-01T07:29:04.076Z"
+          }
+        },
+        "release": {
+          "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+          "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy",
+          "value": {
+            "repo": "https://github.com/smrht/emdash-plugins",
+            "$type": "com.emdashcms.experimental.package.release",
+            "package": "backlinksbeheer-links",
+            "version": "0.1.0",
+            "requires": {
+              "env:emdash": ">=1.1.0"
+            },
+            "artifacts": {
+              "icon": {
+                "blob": {
+                  "ref": {
+                    "$link": "bafkreiftnqhg72o66i3eginzz3fpdm4fyfucfhsmnsqdi6et7saawg4lqm"
+                  },
+                  "size": 17794,
+                  "$type": "blob",
+                  "mimeType": "image/png"
+                },
+                "width": 512,
+                "height": 512,
+                "checksum": "bciqlg3aon7u554rwimq3ttwk6gzylqliekpey3fagr4jh7eabmnyxay",
+                "contentType": "image/png"
+              },
+              "package": {
+                "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/backlinksbeheer-links-0.1.0.tar.gz",
+                "checksum": "bciqcpay7vsbnr2bcgf7pf77ch5pk5ry44km6pkptkqhijph6lqf5zka",
+                "contentType": "application/gzip"
+              },
+              "screenshots": [
+                {
+                  "blob": {
+                    "ref": {
+                      "$link": "bafkreifm3sy6j4cist5azvlwwdoaqqwnin6atur4lb2ytiddr76qkh6oli"
+                    },
+                    "size": 129063,
+                    "$type": "blob",
+                    "mimeType": "image/png"
+                  },
+                  "lang": "en",
+                  "width": 1440,
+                  "height": 900,
+                  "checksum": "bciqkzxfr4tyerfh2btkxnmg4bbbm2q34bhjdywdvrgqghd75aup44wq",
+                  "contentType": "image/png"
+                },
+                {
+                  "blob": {
+                    "ref": {
+                      "$link": "bafkreiceprin4jbg52ikbumjuajao2zshk4tstfdk6qz5isauetcdsrxqe"
+                    },
+                    "size": 68635,
+                    "$type": "blob",
+                    "mimeType": "image/png"
+                  },
+                  "lang": "en",
+                  "width": 390,
+                  "height": 844,
+                  "checksum": "bciqei7cq3yscn3uqudiytiasa5vteovzhfgkgv5bt2rebijgehfdpai",
+                  "contentType": "image/png"
+                }
+              ]
+            },
+            "extensions": {
+              "com.emdashcms.experimental.package.releaseExtension": {
+                "$type": "com.emdashcms.experimental.package.releaseExtension",
+                "declaredAccess": {
+                  "schema": {
+                    "read": {}
+                  },
+                  "content": {
+                    "read": {}
+                  },
+                  "network": {
+                    "request": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "assessments": {
+        "profile": {
+          "assessments": [
+            {
+              "id": "assessment-v1-7eb98e780c0b65cfeec1475b3e00e692e992d4022a12253a30ceaa06cc4a9a55",
+              "src": "did:web:labels.emdashcms.com",
+              "subject": {
+                "kind": "profile",
+                "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+                "cid": "bafyreiesmauvp56kbqwdtz32ux5zomskwp36hntdafu3jryz6e5ht42cra"
+              },
+              "state": "passed",
+              "coverage": {
+                "text": "complete",
+                "links": "complete",
+                "media": "not-present"
+              },
+              "reasonCodes": [
+                "automatic-pass"
+              ],
+              "findings": [],
+              "summary": "The listing metadata is eligible under the current assessment policy.",
+              "assessmentSchemaVersion": 1,
+              "policyVersion": "listing-metadata-v2",
+              "parserVersion": "canonical-listing-input-v1",
+              "models": [
+                {
+                  "purpose": "text",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "6bffa4fe3d04177aa59d7909f2bdb21a84784444a95fc6be6da7bbc3e86eb3db"
+                }
+              ],
+              "labels": [
+                {
+                  "ver": 1,
+                  "src": "did:web:labels.emdashcms.com",
+                  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/backlinksbeheer-links",
+                  "cid": "bafyreiesmauvp56kbqwdtz32ux5zomskwp36hntdafu3jryz6e5ht42cra",
+                  "val": "listing-passed",
+                  "cts": "2026-11-01T07:31:07.172Z",
+                  "sig": {
+                    "$bytes": "ZxVWE06EeiZV8PH/8zB9cALwx681xNBaEwDWepj4KGlMbTgQMCOp0rLJSLtMfVFocIIoW8D8QDDeT7yTsvniuw=="
+                  }
+                }
+              ],
+              "createdAt": "2026-11-01T07:31:01.884Z",
+              "completedAt": "2026-11-01T07:31:07.172Z"
+            }
+          ]
+        },
+        "release": {
+          "assessments": [
+            {
+              "id": "assessment-v1-930d957a3352466d4cfe1d8a5c14e134d343a77d991aa56999caa715f3c5428a",
+              "src": "did:web:labels.emdashcms.com",
+              "subject": {
+                "kind": "release",
+                "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+                "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy"
+              },
+              "state": "passed",
+              "coverage": {
+                "text": "complete",
+                "links": "complete",
+                "media": "complete"
+              },
+              "reasonCodes": [
+                "automatic-pass"
+              ],
+              "findings": [],
+              "summary": "The listing metadata is eligible under the current assessment policy.",
+              "assessmentSchemaVersion": 1,
+              "policyVersion": "listing-metadata-v2",
+              "parserVersion": "canonical-listing-input-v1",
+              "models": [
+                {
+                  "purpose": "text",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "6bffa4fe3d04177aa59d7909f2bdb21a84784444a95fc6be6da7bbc3e86eb3db"
+                },
+                {
+                  "purpose": "image",
+                  "provider": "workers-ai",
+                  "modelId": "@cf/cloudflare/clef",
+                  "modelVersion": "provider-catalog-id",
+                  "promptHash": "42367b4f9069e5392fe51a804e4c526ad38fc406cbe7542beb28557c923cb5b3"
+                }
+              ],
+              "labels": [
+                {
+                  "ver": 1,
+                  "src": "did:web:labels.emdashcms.com",
+                  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/backlinksbeheer-links:0.1.0",
+                  "cid": "bafyreif3yxsysjztcndo53hd5a7yiu7jfx6y646rpzy3ay2en5r4k4dyvy",
+                  "val": "listing-passed",
+                  "cts": "2026-11-01T07:31:15.348Z",
+                  "sig": {
+                    "$bytes": "IYpYC38Bn6GI/8N+6RdKklDTQ96yKM9R6x0uCzvCYRwgPEYr+ARmrT0+bKGva9zvA4bxzalanvNou9Fw/Q+wiQ=="
+                  }
+                }
+              ],
+              "createdAt": "2026-11-01T07:31:03.406Z",
+              "completedAt": "2026-11-01T07:31:15.348Z"
+            }
+          ]
+        }
+      },
+      "public_http": 200
+    }
+  ]
+}

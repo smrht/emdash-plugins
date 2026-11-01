@@ -1,0 +1,161 @@
+{
+  "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+  "cid": "bafyreiaxzf4bz5tv4w3e44q6tle5bb53emrwfr4trsbb72iw3eze536hgu",
+  "did": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+  "slug": "ulazai-media",
+  "profile": {
+    "$type": "com.emdashcms.experimental.package.profile",
+    "id": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+    "type": "emdash-plugin",
+    "license": "MIT",
+    "authors": [
+      {
+        "url": "https://ulazai.com",
+        "name": "UlazAI"
+      }
+    ],
+    "security": [
+      {
+        "email": "security@emdashplugins.nl"
+      }
+    ],
+    "name": "UlazAI Media",
+    "description": "Generate article images with UlazAI and import completed results into the EmDash media library.",
+    "keywords": [
+      "images",
+      "media",
+      "ulazai"
+    ],
+    "sections": {
+      "description": "Create article images with [UlazAI](https://ulazai.com) from the EmDash admin and save completed results in your media library.\n\n1. Add your UlazAI API key in plugin settings. EmDash encrypts it with the site's EMDASH_ENCRYPTION_KEY.\n2. Load the model catalog, choose a model and its supported aspect ratio and quality, then enter your prompt.\n3. Prepare the image, read the estimated credits and confirm the paid generation. The service sets the final charge.\n4. Refresh status, then save the completed image in the media library. Add alt text when using it in your article.\n\nAlready have an image? Enter its UlazAI generation ID to import it without generating again.\n\nRequires EmDash 1.1+, a plugin sandbox and an eligible UlazAI account. New generations use paid credits. No automatic paid retries; each confirmation can submit once. PNG, JPEG and WebP imports up to 4 MiB. No automatic publishing or editing of articles.\n\nPermissions: media:write and unrestricted network requests. Requests go to ulazai.com and the image hosts returned by its API. Your authorization header is never sent to image hosts. The private page requires plugin-management permission. The configured account and latest-result panel are shared by site administrators.\n\nPrompts go to UlazAI after confirmation. Result IDs, one-use confirmations and imported media IDs stay in this site's plugin storage. An uncertain submission or import is not automatically retried: check the UlazAI history or media library first.\n\n[Source and full instructions](https://github.com/smrht/emdash-plugins/tree/main/packages/ulazai-media)."
+    },
+    "extensions": {
+      "com.emdashcms.experimental.package.profileExtension": {
+        "$type": "com.emdashcms.experimental.package.profileExtension",
+        "repository": "https://github.com/smrht/emdash-plugins",
+        "releasePolicy": {
+          "$type": "com.emdashcms.experimental.package.profileExtension#releasePolicy",
+          "requireProvenance": false
+        }
+      }
+    },
+    "lastUpdated": "2026-11-01T07:28:53.596Z",
+    "slug": "ulazai-media"
+  },
+  "indexedAt": "2026-11-01T07:30:50.102Z",
+  "labels": [
+    {
+      "ver": 1,
+      "src": "did:web:labels.emdashcms.com",
+      "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.profile/ulazai-media",
+      "val": "listing-passed",
+      "cts": "2026-11-01T07:31:04.012Z",
+      "cid": "bafyreiaxzf4bz5tv4w3e44q6tle5bb53emrwfr4trsbb72iw3eze536hgu"
+    }
+  ],
+  "handle": "emdashplugins.bsky.social",
+  "latestVersion": "0.1.0",
+  "historicalReleaseCount": 1,
+  "releaseHistoryComplete": true,
+  "latestRelease": {
+    "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+    "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa",
+    "did": "did:plc:p5t4ri3u4rr24wglznjsb5uv",
+    "package": "ulazai-media",
+    "version": "0.1.0",
+    "release": {
+      "$type": "com.emdashcms.experimental.package.release",
+      "package": "ulazai-media",
+      "version": "0.1.0",
+      "artifacts": {
+        "icon": {
+          "blob": {
+            "ref": {
+              "$link": "bafkreiecn2s6abtorujmj5j6i2tt3kt6ebcfahbdp3d5u3zlqjbrtnuf5a"
+            },
+            "size": 1692,
+            "$type": "blob",
+            "mimeType": "image/png"
+          },
+          "width": 180,
+          "height": 180,
+          "checksum": "bciqie3vf4adg5disyt2t4rvhhwvh4icekaocg7wh3jxsxasddg3il2a",
+          "contentType": "image/png"
+        },
+        "package": {
+          "url": "https://github.com/smrht/emdash-plugins/releases/download/emdash-products-2026-10-31/ulazai-media-0.1.0.tar.gz",
+          "checksum": "bciqmk4vqxa3vql7nx7vvver5eczcw7fnuexaircomkvlv54av6x5ufy",
+          "contentType": "application/gzip"
+        },
+        "screenshots": [
+          {
+            "blob": {
+              "ref": {
+                "$link": "bafkreiasme3jicnukltcouyybu3elapybcikgpkv76ebufzvrd4jejp27m"
+              },
+              "size": 87798,
+              "$type": "blob",
+              "mimeType": "image/png"
+            },
+            "lang": "en",
+            "width": 1440,
+            "height": 900,
+            "checksum": "bciqbeyjwsqe3iuxge5jrqdjwiwa7qcequm6vl74idiltlchysis7v6y",
+            "contentType": "image/png"
+          },
+          {
+            "blob": {
+              "ref": {
+                "$link": "bafkreibla3zbm4tjxpe4tat3f7rakce5bhydi477vtd7or7tdu47prez6y"
+              },
+              "size": 47861,
+              "$type": "blob",
+              "mimeType": "image/png"
+            },
+            "lang": "en",
+            "width": 390,
+            "height": 844,
+            "checksum": "bciqcwbxsczzgto6jzgbhwl7cauej2cpqgrz77lgh65d7ghjz67cjt5q",
+            "contentType": "image/png"
+          }
+        ]
+      },
+      "requires": {
+        "env:emdash": ">=1.1.0"
+      },
+      "repo": "https://github.com/smrht/emdash-plugins",
+      "extensions": {
+        "com.emdashcms.experimental.package.releaseExtension": {
+          "$type": "com.emdashcms.experimental.package.releaseExtension",
+          "declaredAccess": {
+            "media": {
+              "read": {},
+              "write": {}
+            },
+            "network": {
+              "request": {}
+            }
+          }
+        }
+      }
+    },
+    "artifactCaches": [
+      {
+        "$type": "com.emdashcms.experimental.aggregator.defs#recordScopedBlobCache",
+        "serviceEndpoint": "https://cdn.em-da.sh"
+      }
+    ],
+    "indexedAt": "2026-11-01T07:30:50.780Z",
+    "labels": [
+      {
+        "ver": 1,
+        "src": "did:web:labels.emdashcms.com",
+        "uri": "at://did:plc:p5t4ri3u4rr24wglznjsb5uv/com.emdashcms.experimental.package.release/ulazai-media:0.1.0",
+        "val": "listing-passed",
+        "cts": "2026-11-01T07:31:13.620Z",
+        "cid": "bafyreiarmt2pj5iziw2kwd4dlgku3dxccvl3fmy33tytowhj2rcno36paa"
+      }
+    ]
+  },
+  "hosting": "external URL"
+}
